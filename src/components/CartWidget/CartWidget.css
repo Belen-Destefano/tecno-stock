@@ -1,0 +1,14 @@
+
+.carrito:hover{
+    transform: scale(1.09);
+}
+
+.containerCarrito{
+    position: relative;
+}
+
+.contadorCarrito{
+    position: absolute;
+    top: 0;
+    right: 2em;
+}

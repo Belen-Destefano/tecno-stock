@@ -1,11 +1,15 @@
 // import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar/NavBar';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 function App() {
   return (
 
-    <NavBar></NavBar>
+   <div>
+      <NavBar />
+      <ItemListContainer greeting="Bienvenido a Tecno-Stock" />
+   </div>
 
   );
 }

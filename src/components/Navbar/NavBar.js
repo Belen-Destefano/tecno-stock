@@ -1,24 +1,40 @@
 import React from "react";
-// import '../materialize/css/materialize.css';
-// import '../materialize/js/materialize';
+
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css'
 
-// import M from '../materialize/css/materialize.css'
-import logo from'../assets/logo.jpg';
-import CartWidget from "./CartWidget";
+import logo from'../../assets/logo.jpg';
+import CartWidget from "../CartWidget/CartWidget";
+// importo esta funcion que se usa para inicializar materialize
+import { useEffect } from "react";
 
 
+const menuItems = [
+    {
+        id: 1, label: "Televisores", href:"/televisores",
+    },
+    {
+        id: 2, label: "Sonido", href:"/sonido",
+    },
+    {
+        id: 3, label: "Camaras", href:"/camaras",
+    },
+
+]
 
 const NavBar = () =>{
+  
+    // para inicializar menu hamburguesa de materialize
+    useEffect(() => {
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-         M.Sidenav.init(elems);
-    });
+        var elems = document.querySelectorAll(".sidenav");    
+        M.Sidenav.init(elems);
+    
+    }, []);
   
     return(
-        <>                      
+        <>         
+             
             <nav>       
                 <div className="nav-wrapper blue-grey darken-3">                
                     
@@ -26,9 +42,16 @@ const NavBar = () =>{
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </a>
                    
                     <ul className="right hide-on-med-and-down">
-                        <li><a href="sass.html">Televisores</a></li>
-                        <li><a href="badges.html">Audio</a></li>
-                        <li><a href="collapsible.html">Camaras</a></li>                
+
+
+
+                        {menuItems.map((item)=> (
+                            <li>
+                             <a href={item.href} className="nav-item" key={item.id}> {item.label}</a>
+                             
+                            </li>
+                            
+                        ) )}
                       
                     </ul>               
 
@@ -42,9 +65,12 @@ const NavBar = () =>{
                               
 
             <ul className="sidenav" id="mobile-demo">
-                <li><a href="sass.html">Televisores</a></li>
-                <li><a href="badges.html">Audio</a></li>
-                <li><a href="collapsible.html">Camaras</a></li>
+
+                {menuItems.map((item)=> (
+                    <li>
+                        <a href={item.href} key={item.id}> {item.label}</a>
+                    </li>
+                ) )}
                              
             </ul>
            
@@ -53,6 +79,7 @@ const NavBar = () =>{
             
     )
     
+  
 
 }
 
