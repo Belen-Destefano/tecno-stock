@@ -1,0 +1,56 @@
+h4{
+    font-weight: 350;  
+    font-size: 25px;
+    
+}
+
+h5{
+    font-size: 23px;
+    font-weight: 350;
+}
+
+
+
+.itemCount-container{
+    width: 26%;
+    padding: 1%;
+    margin: 4%;
+    border: 1px solid #b2b2b2c2!important;
+    background-color: whitesmoke;
+}
+
+.itemCount-container ul li{
+    font-size: 13px;
+}
+
+
+.countModifier-container span{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.countModifier-container{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 4px;
+    width: 100%;
+    
+    
+    align-content: center;
+    border: 1px solid #8b9193!important;
+}
+
+.btnAdd {
+    margin-top: 14px;
+}
+
+.addProducts:focus{
+    background-color: blue !important;
+}
+
+.addProducts:hover{
+background-color: #8b9193;
+}
+

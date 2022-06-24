@@ -44,7 +44,6 @@ const NavBar = () =>{
                     <ul className="right hide-on-med-and-down">
 
 
-
                         {menuItems.map((item)=> (
                             <li>
                              <a href={item.href} className="nav-item" key={item.id}> {item.label}</a>
