@@ -1,0 +1,27 @@
+h4{
+    font-weight: 350;  
+    font-size: 25px;
+    
+}
+
+h5{
+    font-size: 23px;
+    font-weight: 350;
+}
+
+
+.itemContainer{
+    width: 26%;
+    padding: 1%;
+    margin: 3%;
+    border: 1px solid #b2b2b2c2!important;
+  
+}
+
+.img-Container{
+    border: 1px solid #b2b2b2c2!important;
+    background-color: whitesmoke;
+}
+
+
+

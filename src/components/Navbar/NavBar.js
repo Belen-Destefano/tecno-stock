@@ -11,13 +11,13 @@ import { useEffect } from "react";
 
 const menuItems = [
     {
-        id: 1, label: "Televisores", href:"/televisores",
+        id: "01", label: "Televisores", href:"/televisores",
     },
     {
-        id: 2, label: "Sonido", href:"/sonido",
+        id: "02", label: "Sonido", href:"/sonido",
     },
     {
-        id: 3, label: "Camaras", href:"/camaras",
+        id: "03", label: "Camaras", href:"/camaras",
     },
 
 ]
