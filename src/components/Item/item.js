@@ -1,0 +1,1 @@
+// recibe un producto por props y muestra sus caracteristicas

@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "categoria": "Televisores",
+        "producto":"Tele1" 
+    },
+    {
+        "id":2,
+        "categoria": "Televisores",
+        "producto":"Tele2" 
+    },
+    {
+        "id":3,
+        "categoria": "Televisores",
+        "producto":"Tele3" 
+    },
+
+
+
+    {
+        "id":4,
+        "categoria": "Sonido",
+        "producto":"Sonido1" 
+    },
+    {
+        "id":5,
+        "categoria": "Sonido",
+        "producto":"Sonido2" 
+    },
+    {
+        "id":6,
+        "categoria": "Sonido",
+        "producto":"Sonido3" 
+    },
+
+
+    {
+        "id":7,
+        "categoria": "Camaras",
+        "producto":"Camaras1" 
+    },
+    {
+        "id":8,
+        "categoria": "Camaras",
+        "producto":"Camaras2" 
+    },
+    {
+        "id":9,
+        "categoria": "Camaras",
+        "producto":"Camaras3" 
+    }
+
+]
+
+
+

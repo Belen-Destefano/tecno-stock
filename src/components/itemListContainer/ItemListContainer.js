@@ -1,18 +1,24 @@
-import React from 'react'
+// import React, { useEffect, useState } from 'react'
+import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemListContainer.css';
+// import Json from '../../datos.json';
 
 
-const ItemListContainer = ({greeting}) =>{
-   
-    function onAdd(e) {      
+const ItemListContainer = ({greeting}) =>{ 
+  
+
+    function onAdd(cantidad) {      
+        alert("Seleccionaste " + cantidad + " producto/s");   
         
-        console.log((e.target.parentElement.childNodes[1]).textContent); 
-
     }
+
+    // function onAdd(e) {              
+    //     console.log((e.target.parentElement.childNodes[1]).textContent); 
+    // }
     
     return (
-        <>
+        <>           
             <div>
                 <h1 className='greeting'>{greeting}</h1>              
             </div>

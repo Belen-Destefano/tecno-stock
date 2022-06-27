@@ -35,16 +35,16 @@ h5{
     flex-direction: row;
     justify-content: space-between;
     border-radius: 4px;
-    width: 100%;
+
+    width: 30%;
+    padding: 1% 1%;
+    margin: 10%;
     
     
     align-content: center;
     border: 1px solid #8b9193!important;
 }
 
-.btnAdd {
-    margin-top: 14px;
-}
 
 .addProducts:focus{
     background-color: blue !important;
