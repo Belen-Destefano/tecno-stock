@@ -9,18 +9,30 @@ h5{
     font-weight: 350;
 }
 
+.descriptionContainer{
+    padding: 0% 5%;
+}
+
+.priceHome{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+}
 
 .itemContainer{
-    width: 26%;
-    padding: 1%;
-    margin: 3%;
+    width: 265px;
+    margin: 1%;
     border: 1px solid #b2b2b2c2!important;
   
 }
 
 .img-Container{
-    border: 1px solid #b2b2b2c2!important;
+    border-bottom: 1px solid #b2b2b2c2!important;
     background-color: whitesmoke;
+}
+
+.btnVerMas{
+    margin: 5% 0%;
 }
 
 

@@ -3,19 +3,11 @@
 import React from 'react'
 import './item.css';
 
-// PROBANDO ITEM COUNT ACA
-import ItemCount from '../ItemCount/ItemCount';
 
 const item = ({product}) => {
 
     const {id, category, name, price, description, img}= product
 
-
-    // PROBANDO ITEM COUNT ACA
-    function onAdd(cantidad) {      
-        alert("Seleccionaste " + cantidad + " producto/s");   
-        
-    }
 
   return (
     
@@ -24,16 +16,16 @@ const item = ({product}) => {
             <div className='img-Container'>
                 <img className='responsive-img' src={img} alt="{name}" />
             </div>
-            
-            <h4>{name} </h4>
-            <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>    
-            <p>{description}</p>
 
-            {/* PROBANDO ITEMCOUNT ACA */}
-            <div>           
-                <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+            <div className='descriptionContainer'>
+                
+                <h4>{name} </h4>
+                <h5 className='priceHome'>${price} - Precio en un pago</h5>
+                <p >{description}</p>
+                <a className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</a>
             </div>
             
+
 
         </div>    
     

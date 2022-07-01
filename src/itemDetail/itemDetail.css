@@ -1,0 +1,76 @@
+h2{
+    font-size: 2em;
+    margin: 6%;
+    text-align: center;
+}
+
+h3{
+    color: #32373a;
+}
+
+h5{
+    text-align: center;
+}
+
+.extendedName-text{
+    width: 40em;
+}
+
+.extendedDescriptionContainer{
+    background-image: url(https://c.wallhere.com/photos/46/ab/abstraction_blue_background_light-620336.jpg!d);
+    padding: 4%;
+}
+
+.extendedDescriptionContainer div{
+    margin: 3%;
+    background: #0000008a;
+    padding: 1%;
+}
+
+
+.mainDetails{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.extendedDescription-text{
+    margin: 3% 7%;
+    text-align: center;
+    color: white;
+}
+
+.imgProductDetail{
+   
+    margin: 2%;
+    cursor: zoom-in;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.imgProductDetail:active{
+    transform: scale(1.1);
+    
+}
+
+.anotherContainer{
+    margin: 4% auto;
+    display: flex;
+    flex-direction: revert;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.anotherContainer img{
+    width: 36em;
+    padding: 2%;
+}
+
+.anotherContainer div{
+    width: 36em;
+    margin: 2em;
+}
+
+
