@@ -7,17 +7,18 @@ import logo from'../../assets/logo.jpg';
 import CartWidget from "../CartWidget/CartWidget";
 // importo esta funcion que se usa para inicializar materialize
 import { useEffect } from "react";
+import {Link, NavLink} from "react-router-dom";
 
 
 const menuItems = [
     {
-        id: "01", label: "Televisores", href:"/televisores",
+        id: "01", label: "Televisores", route:"/categoria/Televisores",
     },
     {
-        id: "02", label: "Sonido", href:"/sonido",
+        id: "02", label: "Sonido", route:"/categoria/Sonido",
     },
     {
-        id: "03", label: "Camaras", href:"/camaras",
+        id: "03", label: "Camaras", route:"/categoria/Camaras",
     },
 
 ]
@@ -38,15 +39,15 @@ const NavBar = () =>{
             <nav>       
                 <div className="nav-wrapper blue-grey darken-3">                
                     
-                    <a href="#" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></a>                   
-                    <a href="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </a>
+                    <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>                   
+                    <Link to="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </Link>
                    
                     <ul className="right hide-on-med-and-down">
 
 
                         {menuItems.map((item)=> (
                             <li>
-                             <a href={item.href} className="nav-item" key={item.id}> {item.label}</a>
+                             <NavLink to={item.route} className="nav-item" key={item.id}> {item.label}</NavLink>
                              
                             </li>
                             
@@ -54,9 +55,12 @@ const NavBar = () =>{
                       
                     </ul>               
 
-                    <ul style= {styles.cartContainer}  className="right ">                   
-                      <CartWidget/>             
-                    </ul>                       
+             
+
+                    <Link to="/carrito"  style= {styles.cartContainer}  className="right ">
+                            <CartWidget/>     
+                    </Link>          
+
                 </div>                  
                      
             </nav>
@@ -67,7 +71,7 @@ const NavBar = () =>{
 
                 {menuItems.map((item)=> (
                     <li>
-                        <a href={item.href} key={item.id}> {item.label}</a>
+                        <NavLink to={item.route} key={item.id}> {item.label}</NavLink>
                     </li>
                 ) )}
                              

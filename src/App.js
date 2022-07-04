@@ -3,15 +3,35 @@ import './App.css';
 import NavBar from './components/Navbar/NavBar';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './itemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
-
-   <div>
+    // para generar la navegacion browser router
+    <BrowserRouter>
+      
       <NavBar />
-      <ItemListContainer greeting="Bienvenido a Tecno-Stock" />
-      <ItemDetailContainer/>
-   </div>
+      <Routes> 
+
+        <Route path='/' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
+        {/* categorias tiene mismo componente en el elemento por que voy a trabajar sobre el mismo componente filtrandolo para conseguirlo. */}
+        <Route path='/categoria/:categoryId' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
+        <Route path='/producto/:productId' element={<ItemDetailContainer/>}/>
+        <Route path='/carrito' element={<Cart/>}/>
+
+      </Routes>
+      
+      <Footer/>
+    </BrowserRouter>
+
 
   );
 }

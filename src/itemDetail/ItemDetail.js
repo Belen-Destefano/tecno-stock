@@ -1,6 +1,9 @@
 import React from 'react'
 import ItemCount from '../components/ItemCount/ItemCount';
 import './itemDetail.css'
+import {Link} from "react-router-dom";
+import 'materialize-css/dist/css/materialize.min.css'
+
 
 // PROBANDO ITEM COUNT ACA
 
@@ -10,7 +13,7 @@ import './itemDetail.css'
 
 function ItemDetail({productDetail}) {
 
-  const {id, category, name, price, description, img, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
+  const {id, category, name, price, description, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
   
 
   // ITEM COUNT FUNCTION
@@ -20,6 +23,12 @@ function ItemDetail({productDetail}) {
 
   return (
     <section>
+
+      <div className='frontProduct'>
+        <h2 className='frontTitle'>{category}</h2>
+        <Link to={`/categoria/${category}`}> <p>  <i class="material-icons">keyboard_arrow_left</i>   Volver a la categoria </p> </Link>
+       
+      </div>
       
       <div className='mainDetails'>
 
@@ -32,7 +41,7 @@ function ItemDetail({productDetail}) {
         <div>
 
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>            
-          <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+          <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
         </div>
          
 

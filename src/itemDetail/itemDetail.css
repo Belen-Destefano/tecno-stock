@@ -1,7 +1,7 @@
 h2{
     font-size: 2em;
     margin: 6%;
-    text-align: center;
+    text-align: left;
 }
 
 h3{
@@ -12,13 +12,44 @@ h5{
     text-align: center;
 }
 
+
+
+a {
+    color: white;
+}
+
 .extendedName-text{
     width: 40em;
 }
 
+.frontProduct{
+    background: radial-gradient(circle, rgba(25,48,59,1) 0%, rgba(19,28,33,1) 100%);
+    padding: 6%;
+}
+
+.material-icons {
+
+    font-size: 11px;
+}
+
+.frontTitle{
+
+    font-size: 3em;
+  
+    text-align: left;
+    margin: 0;
+    color: white;
+    
+}
+
 .extendedDescriptionContainer{
-    background-image: url(https://c.wallhere.com/photos/46/ab/abstraction_blue_background_light-620336.jpg!d);
-    padding: 4%;
+    background-image: url(https://i.postimg.cc/Gm97SJtf/3d-science-modern-network-communications-background.jpg);
+    padding: 2%;
+    background-color: #3e3e3e;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .extendedDescriptionContainer div{
@@ -44,7 +75,7 @@ h5{
 
 .imgProductDetail{
    
-    margin: 2%;
+    margin: 2% 0%;
     cursor: zoom-in;
   transition: all 0.3s ease-in-out !important;
 }
@@ -65,7 +96,8 @@ h5{
 
 .anotherContainer img{
     width: 36em;
-    padding: 2%;
+    box-shadow: 3px 4px 10px #6d6d6deb;
+  
 }
 
 .anotherContainer div{

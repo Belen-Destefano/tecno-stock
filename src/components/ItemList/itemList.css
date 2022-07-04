@@ -5,16 +5,14 @@
    justify-content: space-evenly;
 }
 
-h3{
-   
-   text-align: center;
-   margin: 4% 4%; 
-
+h3 {
+   text-align: left;
+   margin: 1% 1%;
    color: #37474f;
-   text-align: center;
-   font-weight: 350;
-   font-size: 3em;
+   font-weight: 500;
+   font-size: 27PX;
 }
 
-
-
+body{
+   background-image: url(https://i.postimg.cc/htNv2Jfn/fondo.jpg);
+}

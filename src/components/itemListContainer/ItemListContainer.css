@@ -1,6 +1,47 @@
+.greetingBackground {
+    background-image: url(https://i.postimg.cc/Y0yfPfZD/cosmic-background-with-dark-and-light-blue-laser-lights-perfect-for-digital-wallpaper.jpg);
+    background-color: #3e3e3e;
+    height: 40em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.greetingContainer{
+    width: 28em;
+    background-color: #020a1599;
+    height: 20em;
+    margin-left: 4%;
+    padding-top: 4%;
+}
+
 .greeting{
-    color: #32373a;
-    text-align: center;
+    color: #ffffff;
+    text-align: left;
     font-weight: 300;
     font-size: 4em;
+    margin: auto;
+    padding: 3% 9%;
+
+}
+
+.greetingTwo{
+    font-weight: 300;
+    margin: 0%;
+    color: white;
+    padding: 0% 10%;
+}
+
+.greetingThree{
+    color: #ffffff;
+    background-color: #020a15d1;
+    text-align: center;
+    margin: 4% 4%;
+    text-align: left;
+    font-weight: 350;
+    font-size: 1em;
+    padding: 3% 7%;
 }

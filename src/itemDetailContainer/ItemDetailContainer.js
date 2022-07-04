@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from '../itemDetail/ItemDetail'
-import {getData} from '../mocks/fakeApiDetails'
+// import {getData} from '../mocks/fakeApiDetails'
+
+import {useParams} from 'react-router-dom';
+import { getProduct } from '../mocks/fakeApi';
 
 function ItemDetailContainer() {
 
     const [productDetail, setProductDetail]= useState({})
     const [loading, setLoading]= useState (true)
-   
 
-    const getProductDetail = async () =>{
-        try{
-            const respuesta = await getData
-            setProductDetail(respuesta)
-        } catch(error){
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
-    }
-  
+    const {productId}= useParams();
 
     useEffect (()=> {
-        getProductDetail()
-    },[])
+        setLoading(true)
+        getProduct(productId)
+        .then((res) => {
+            setProductDetail(res);            
+        })
+        .catch((error) => {
+            console.log(error)      
+        })
+        .finally(() => {
+            setLoading(false)
+        })
+    },[productId])
+   
+
+    // const getProductDetail = async () =>{
+    //     try{
+    //         const respuesta = await getData
+    //         setProductDetail(respuesta)
+    //     } catch(error){
+    //         console.log(error)
+    //     } finally {
+    //         setLoading(false)
+    //     }
+    // }
+  
+
+    // useEffect (()=> {
+    //     getProductDetail()
+    // },[])
 
 
 
