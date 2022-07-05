@@ -16,6 +16,8 @@ h5{
 
 a {
     color: white;
+    display: inline-block;
+ 
 }
 
 .extendedName-text{

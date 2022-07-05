@@ -45,3 +45,14 @@
     font-size: 1em;
     padding: 3% 7%;
 }
+
+.imgBannerPago{
+    box-shadow: 3px 4px 10px #6d6d6deb;
+}
+
+.bannerContainer{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4%;
+}

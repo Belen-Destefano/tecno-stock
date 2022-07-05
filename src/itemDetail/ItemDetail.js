@@ -26,7 +26,9 @@ function ItemDetail({productDetail}) {
 
       <div className='frontProduct'>
         <h2 className='frontTitle'>{category}</h2>
-        <Link to={`/categoria/${category}`}> <p>  <i class="material-icons">keyboard_arrow_left</i>   Volver a la categoria </p> </Link>
+        <Link to={`/`}> <p> Home </p> </Link>
+        <Link to={`/categoria/${category}`}> <p> / Categoria </p> </Link>
+       
        
       </div>
       

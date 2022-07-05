@@ -1,3 +1,20 @@
+# React App Tecno-Stock
+
+App creada para la venta de productos de electrónica de consumo, audio y cámaras profesionales.
+
+## Librerias utilizadas
+
+Materializecss "^1.0.0-rc.2" tanto para el menu como el footer e imagenes responsive
+
+### Imagenes utilizadas
+
+Imagenes subidas a postimages.org, pagina de almacenamiento de imagenes.
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
