@@ -11,11 +11,8 @@ h5{
     font-weight: 350;
 }
 
-p {
-    font-size: 13px;
-}
 
-.textHeight{    height: 13em;}
+.textHeight{       height: 9em; font-size: 11px;}
 
 .descriptionContainer{
     background-color: white;
@@ -33,7 +30,7 @@ p {
 }
 
 .itemContainer{
-    width: 310px;
+    width: 343px;
     margin: 1%;
     border: 1px solid #b2b2b2c2!important;
     /* box-shadow: 2px -1px 11px #add8e680; */

@@ -35,36 +35,36 @@ const NavBar = () =>{
   
     return(
         <>         
-             
-            <nav>       
-                <div className="nav-wrapper blue-grey darken-3">                
+            <div class="navbar-fixed">
+                <nav>       
+                    <div className="nav-wrapper blue-grey darken-3">                
+                        
+                        <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>                   
+                        <Link to="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </Link>
                     
-                    <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>                   
-                    <Link to="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </Link>
-                   
-                    <ul className="right hide-on-med-and-down">
+                        <ul className="right hide-on-med-and-down">
 
 
-                        {menuItems.map((item)=> (
-                            <li>
-                             <NavLink to={item.route} className="nav-item" key={item.id}> {item.label}</NavLink>
-                             
-                            </li>
-                            
-                        ) )}
-                      
-                    </ul>               
+                            {menuItems.map((item)=> (
+                                <li>
+                                <NavLink to={item.route} className="nav-item" key={item.id}> {item.label}</NavLink>
+                                
+                                </li>
+                                
+                            ) )}
+                        
+                        </ul>               
 
-             
+                
 
-                    <Link to="/carrito"  style= {styles.cartContainer}  className="right ">
-                            <CartWidget/>     
-                    </Link>          
+                        <Link to="/carrito"  style= {styles.cartContainer}  className="right ">
+                                <CartWidget/>     
+                        </Link>          
 
-                </div>                  
-                     
-            </nav>
-          
+                    </div>                  
+                        
+                </nav>
+            </div>                    
                               
 
             <ul className="sidenav" id="mobile-demo">

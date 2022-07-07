@@ -3,7 +3,7 @@ import ItemDetail from '../itemDetail/ItemDetail'
 // import {getData} from '../mocks/fakeApiDetails'
 
 import {useParams} from 'react-router-dom';
-import { getProduct } from '../mocks/fakeApi';
+import { getProduct } from '../../mocks/fakeApi';
 
 function ItemDetailContainer() {
 
@@ -27,6 +27,7 @@ function ItemDetailContainer() {
     },[productId])
    
 
+    // CON ASYNC AWAIT - TRY CATCH. lo dejo aca por las dudas q lo cambie mas adelante
     // const getProductDetail = async () =>{
     //     try{
     //         const respuesta = await getData

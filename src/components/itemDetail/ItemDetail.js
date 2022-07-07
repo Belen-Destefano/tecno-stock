@@ -1,5 +1,5 @@
-import React from 'react'
-import ItemCount from '../components/ItemCount/ItemCount';
+import React, { useEffect, useState } from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 import './itemDetail.css'
 import {Link} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css'
@@ -15,12 +15,20 @@ function ItemDetail({productDetail}) {
 
   const {id, category, name, price, description, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
   
+  
+ 
+  
 
   // ITEM COUNT FUNCTION
-  function onAdd(cantidad) {      
-    alert("Seleccionaste " + cantidad + " producto/s");         
+  function onAdd(quantity) {      
+    // alert("Seleccionaste " + cantidad + name + " producto/s");        
+    alert (` Producto: ${name} \n Cantidad: ${quantity}  \n Precio: ${price}  `) ;
+  
+  
   }
 
+
+   
   return (
     <section>
 
@@ -43,7 +51,7 @@ function ItemDetail({productDetail}) {
         <div>
 
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>            
-          <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
+          <ItemCount stock={stock} initial={1}  onAdd={onAdd}/>
         </div>
          
 
