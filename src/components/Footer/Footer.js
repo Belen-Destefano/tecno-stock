@@ -22,20 +22,20 @@ function Footer() {
   return (
 
 
-    <footer class="page-footer blue-grey darken-3">
-        <div class="container">
-        <div class="row">
-            <div class="left-align col l6 s12">
-            <h5 class="left-align white-text">  <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>          </h5>
+    <footer className="page-footer blue-grey darken-3">
+        <div className="container">
+        <div className="row">
+            <div className="left-align col l6 s12">
+            <h5 className="left-align white-text">  <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>          </h5>
             {/* <p class="grey-text text-lighten-4"> © 2014 Copyright Tecno-Stock.</p> */}
             </div>
-            <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Menu</h5>
+            <div className="col l4 offset-l2 s12">
+            <h5 className="white-text">Menu</h5>
             <ul>
 
               {menuItems.map((item)=> (
                   <li className='center-align'>
-                      <Link class="white-text text-lighten-3 center-align" to={item.route} key={item.id}> {item.label}</Link>
+                      <Link className="white-text text-lighten-3 center-align" to={item.route} key={item.id}> {item.label}</Link>
                   </li>
               ) )}
                
@@ -43,9 +43,9 @@ function Footer() {
             </div>
         </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          <p class="grey-text text-lighten-4"> © 2014 Copyright Tecno-Stock.</p>
+        <div className="footer-copyright">
+          <div className="container">
+          <p className="grey-text text-lighten-4"> © 2014 Copyright Tecno-Stock.</p>
         
           </div>
         </div>

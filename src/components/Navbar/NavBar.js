@@ -35,7 +35,7 @@ const NavBar = () =>{
   
     return(
         <>         
-            <div class="navbar-fixed">
+            <div className="navbar-fixed">
                 <nav>       
                     <div className="nav-wrapper blue-grey darken-3">                
                         
