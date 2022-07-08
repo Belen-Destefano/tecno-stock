@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import './itemDetail.css'
 import {Link} from "react-router-dom";
@@ -8,25 +8,25 @@ import 'materialize-css/dist/css/materialize.min.css'
 // PROBANDO ITEM COUNT ACA
 
 
-
-
-
 function ItemDetail({productDetail}) {
 
   const {id, category, name, price, description, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
   
   
- 
-  
+  const [quantityProduct, setQuantityProduct]= useState(0)
+  const [changeBoton, setChangeBoton]= useState(true)
 
   // ITEM COUNT FUNCTION
-  function onAdd(quantity) {      
-    // alert("Seleccionaste " + cantidad + name + " producto/s");        
-    alert (` Producto: ${name} \n Cantidad: ${quantity}  \n Precio: ${price}  `) ;
-  
-  
-  }
 
+
+  function onAdd(quantity) {          
+    
+    setQuantityProduct(quantity)     
+  
+    setChangeBoton(false)
+  }
+ 
+  console.log('probando si se guardo '+ quantityProduct);
 
    
   return (
@@ -50,8 +50,12 @@ function ItemDetail({productDetail}) {
         {/* ITEMCOUNT */}   
         <div>
 
-          <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>            
-          <ItemCount stock={stock} initial={1}  onAdd={onAdd}/>
+          <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>  
+         
+
+
+          { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> : <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>   }            
+         
         </div>
          
 

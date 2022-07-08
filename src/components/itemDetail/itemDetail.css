@@ -11,8 +11,11 @@ h3{
 h5{
     text-align: center;
 }
-
-
+/* text-shadow: 1px 1px 4px #000000; */
+.btngocart{
+    width: 255px;
+    margin-bottom: 10px;
+}
 
 a {
     color: white;
