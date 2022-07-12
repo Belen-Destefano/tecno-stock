@@ -46,8 +46,8 @@ const NavBar = () =>{
 
 
                             {menuItems.map((item)=> (
-                                <li>
-                                <NavLink to={item.route} className="nav-item" key={item.id}> {item.label}</NavLink>
+                                <li  key={item.id}>
+                                 <NavLink to={item.route} className="nav-item" > {item.label}</NavLink>
                                 
                                 </li>
                                 
@@ -70,8 +70,8 @@ const NavBar = () =>{
             <ul className="sidenav" id="mobile-demo">
 
                 {menuItems.map((item)=> (
-                    <li>
-                        <NavLink to={item.route} key={item.id}> {item.label}</NavLink>
+                    <li key={item.id}>
+                        <NavLink to={item.route}> {item.label}</NavLink>
                     </li>
                 ) )}
                              

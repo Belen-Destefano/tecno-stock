@@ -1,8 +1,10 @@
-import React, {useState } from 'react'
+import React, {useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import './itemDetail.css'
 import {Link} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css'
+
+import {context} from '../../context/CartContext'
 
 
 // PROBANDO ITEM COUNT ACA
@@ -11,24 +13,23 @@ import 'materialize-css/dist/css/materialize.min.css'
 function ItemDetail({productDetail}) {
 
   const {id, category, name, price, description, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
-  
-  
-  const [quantityProduct, setQuantityProduct]= useState(0)
+    
+
   const [changeBoton, setChangeBoton]= useState(true)
 
-  // ITEM COUNT FUNCTION
-
-
-  function onAdd(quantity) {          
-    
-    setQuantityProduct(quantity)     
+  // ACAAAAAAAAA CONTEXTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  const {addProduct}=useContext(context)
   
-    setChangeBoton(false)
-  }
- 
-  console.log('probando si se guardo '+ quantityProduct);
 
-   
+  // ITEM COUNT FUNCTION
+  function onAdd(quantity) {      
+
+    const product = {...productDetail, qty: quantity } 
+    addProduct(product)
+    setChangeBoton(false)
+  } 
+
+
   return (
     <section>
 
@@ -49,15 +50,9 @@ function ItemDetail({productDetail}) {
         
         {/* ITEMCOUNT */}   
         <div>
-
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>  
-         
-
-
-          { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> : <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>   }            
-         
-        </div>
-         
+          { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> : <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>   }           
+        </div>         
 
       </div>
 
@@ -72,14 +67,8 @@ function ItemDetail({productDetail}) {
         <img className='responsive-img'  src={anotherImage} alt="" />
         <div>
           <p>{anotherDescription}</p>
-        </div>
-       
-
+        </div>     
       </div>
-
-      
-
-
 
     </section>
   )

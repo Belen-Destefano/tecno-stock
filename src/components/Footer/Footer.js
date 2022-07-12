@@ -3,7 +3,7 @@ import './footer.css'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import logo from'../../assets/logo.jpg';
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const menuItems = [
   {
@@ -34,8 +34,8 @@ function Footer() {
             <ul>
 
               {menuItems.map((item)=> (
-                  <li className='center-align'>
-                      <Link className="white-text text-lighten-3 center-align" to={item.route} key={item.id}> {item.label}</Link>
+                  <li className='center-align' key={item.id}>
+                      <Link className="white-text text-lighten-3 center-align" to={item.route} > {item.label}</Link>
                   </li>
               ) )}
                
