@@ -1,0 +1,62 @@
+.imgCart{
+    width: 10em;
+}
+
+.cartContainer{
+    width: 26%;
+    padding: 2%;
+    position: relative;
+    left: 67em;
+    background: whitesmoke;
+}
+
+.textCart{
+    width: 50%;
+}
+
+.productCartContainer{
+    display: flex;
+    flex-direction: row;
+  
+    justify-content: flex-start;
+}
+
+.deleteBtn{
+    color: black;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-left: 2px;
+}
+
+.background{
+    background-color: rgba(0, 0, 0, 0.444);
+}
+
+.btnCartVolver{
+    color: black;
+    margin: 4% 24%;
+    padding: 3%;
+    background-color: #00000018;
+}
+
+.btnCartVolverDos{
+    color: black;
+    margin: 4% 18%;
+    padding: 3%;
+    background-color: #0000000f;
+}
+
+.btnBuy {
+    width: 90%;    
+    margin: 4% 5%;
+}
+
+.linkBtnBuy{
+    width: 100%;
+    
+}
+
+.btnMas{
+    margin: 1% 29%;
+    color: #525252;
+}

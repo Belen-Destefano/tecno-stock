@@ -14,7 +14,8 @@ h5{
 /* text-shadow: 1px 1px 4px #000000; */
 .btngocart{
     width: 255px;
-    margin-bottom: 17px;
+    margin-bottom: 0px;
+    margin-top: 21px;
 }
 
 a {
@@ -33,7 +34,7 @@ a {
 }
 
 .material-icons {
-
+    color: white;
     font-size: 11px;
 }
 
@@ -111,3 +112,7 @@ a {
 }
 
 
+.btnMore {
+    color: #525252;
+    margin: 0% 25%;
+}

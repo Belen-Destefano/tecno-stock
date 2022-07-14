@@ -1,8 +1,7 @@
-import { computeHeadingLevel } from '@testing-library/react';
 import React, {createContext, useEffect, useState} from 'react';
 
-export const context = createContext();
-const {Provider} = context;
+export const cartContext = createContext();
+const {Provider} = cartContext;
 
 const CustomProvider = ({ children }) => {
 

@@ -1,15 +1,17 @@
 import React, {useContext} from 'react'
 import './CartWidget.css';
-import {context} from '../../context/CartContext'
+import {cartContext} from '../../context/CartContext'
 
 const CartWidget = () => {
 
-    const {quantityProduct} = useContext(context);
+    const {quantityProduct, products} = useContext(cartContext);
+
    
     return (
         <div className='containerCarrito'>
             <i className="material-icons carrito" alt="carrito">shopping_cart</i>
-            <span className="contadorCarrito">{quantityProduct}</span>      
+            { products.length > 0 &&  <span className="contadorCarrito">{quantityProduct}</span> }
+           
         </div>     
 
     )        

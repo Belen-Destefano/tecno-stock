@@ -4,7 +4,7 @@ import './itemDetail.css'
 import {Link} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css'
 
-import {context} from '../../context/CartContext'
+import {cartContext} from '../../context/CartContext'
 
 
 // PROBANDO ITEM COUNT ACA
@@ -12,13 +12,13 @@ import {context} from '../../context/CartContext'
 
 function ItemDetail({productDetail}) {
 
-  const {id, category, name, price, description, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
+  const {category,price, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
     
 
   const [changeBoton, setChangeBoton]= useState(true)
 
   // ACAAAAAAAAA CONTEXTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-  const {addProduct}=useContext(context)
+  const {addProduct}=useContext(cartContext)
   
 
   // ITEM COUNT FUNCTION
@@ -51,6 +51,9 @@ function ItemDetail({productDetail}) {
         {/* ITEMCOUNT */}   
         <div>
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>  
+          <Link className='btnMore center-align' to={`/`}>  <p> Ver mas productos </p> </Link>
+          <br />
+          <br />
           { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> : <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>   }           
         </div>         
 
