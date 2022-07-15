@@ -6,7 +6,7 @@
     width: 26%;
     padding: 2%;
     position: relative;
-    left: 67em;
+    left: 74%;
     background: whitesmoke;
 }
 
@@ -59,4 +59,97 @@
 .btnMas{
     margin: 1% 29%;
     color: #525252;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .btnCartVolver {
+        margin: 4% 35%;
+    }
+
+    .cartContainer {
+        width: 50%;
+        padding: 2%;
+        position: relative;
+        left: 24%;
+        background: whitesmoke;
+    }
+
+    .textCart {
+        width: 28%;
+    }
+
+    .productCartContainer {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btnMas {
+        margin: 2% 38%;
+    }
+
+    .linkBtnBuy {
+        width: 50%;
+        margin: 2% 24%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .btnCartVolver {
+        margin: 4% 39%;
+    }
+
+
+    .cartContainer {
+        width: 100%;
+        padding: 2%;
+        position:inherit;
+        
+        background: whitesmoke;
+    }
+
+    .productCartContainer {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .textCart {
+        width: 100px;
+    }
+
+    .imgCart {
+        width: 13em;
+    }
+
+    .btnBuy {
+        width: 50%;
+        margin: 4% 26%;
+    }
+
+
+    .btnMas {
+        margin: 2% 42%;
+    }
+}
+
+@media only screen and (max-width: 412px){
+    .btnCartVolver {
+        margin: 4% 32%;
+    }
+
+    .btnBuy {
+        width: 72%;
+        margin: 5% 17%;
+    }
+
+    .btnMas {
+        margin: 1% 35%;
+    }
+}
+
+@media only screen and (max-width: 360px){
+.btnCartVolver {
+    margin: 4% 30%;
+}
 }

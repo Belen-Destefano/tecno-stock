@@ -5,12 +5,9 @@ import {Link} from "react-router-dom";
 
 function Cart() {
 
-  const {products,deleteProduct, clear  }=useContext(cartContext)
+  const {products,deleteProduct, clear, addingPrice }=useContext(cartContext)
 
-  // ESTO PARA EL TOTAL, ESTA BIEN QUE ESTE ACA? O MEJOR EN CART CONTEXT?
-  let total= 0;    
-  products.forEach(product => { total += (product.price * product.qty)});
-
+  const totalPrice = addingPrice () 
 
   if (products.length) {
 
@@ -43,7 +40,7 @@ function Cart() {
           <div>          
             <br/>
             <hr />
-            <h5  className='center-align'  >Total: { total} </h5>
+            <h5  className='center-align'  >Total: ${ totalPrice} </h5>
             <Link className='btnMas center-align' to={`/`}>  <p> Ver mas productos </p> </Link>
             <Link to="/carrito" className='linkBtnBuy'><button className='waves-effect waves-light btn deep-orange accent-4 btnBuy'>Comprar</button></Link>     
           </div>

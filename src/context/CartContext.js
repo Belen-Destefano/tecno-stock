@@ -34,6 +34,19 @@ const CustomProvider = ({ children }) => {
         }       
     };
 
+    //ACA LAS DOS FORMAS DE CALCULAR TOTAL. 
+
+    const addingPrice = ()=> {
+        let total= 0;    
+        products.forEach(product => { total += (product.price * product.qty)});
+        return total
+    }
+    // const total = () => {
+    //     products.reduce ((acum, actual)=> acum + actual.price * actual.qty, 0)
+    // }
+
+    
+
     const deleteProduct = (id) => {
         // slice puede Ser x q entrega otro array, no altera el Array, pero mejor filter invertido
         setProducts (products.filter(product => product.id !== id))
@@ -58,7 +71,7 @@ const CustomProvider = ({ children }) => {
 
 
     return (
-        <Provider value={{products,addProduct, deleteProduct, quantityProduct, clear } }>
+        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear } }>
             {children}
         </Provider>
     )
