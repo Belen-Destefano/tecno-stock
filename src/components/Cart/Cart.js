@@ -56,7 +56,7 @@ function Cart() {
         <section className='cartContainer'>
           <h2 className='center-align'>Carrito</h2>
   
-         <div> <h4 className='center-align'> No hay productos </h4>
+         <div > <h4 className='center-align '> No hay productos </h4>
             <Link className='btnCartVolver center-align' to={`/`}>  <p> Volver a Productos </p> </Link>
           </div> 
           

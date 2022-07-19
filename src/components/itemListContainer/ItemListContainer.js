@@ -2,34 +2,53 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import './ItemListContainer.css';
-import {getData} from '../../mocks/fakeApi';
-
+// import {getData} from '../../mocks/fakeApi';
 import {useParams} from 'react-router-dom';
+
+//ACA IMPORTS DE FIREBASE
+import {db} from "../../firebase/firebase";
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 
 const ItemListContainer = ({greeting}) =>{ 
 
-    const [productList, setProducList]= useState([])
+    const [productList, setProductList]= useState([])
     const [loading, setLoading]= useState (true)
 
     const {categoryId} = useParams();
-    // console.log(categoryId);
- 
+   
  
 
     useEffect (()=> {
-        setLoading(true)
-        getData(categoryId)
-        .then((res) => {
-            setProducList(res);            
-        })
+
+        const productsCollection = collection(db, 'productos');
+        const q = query(productsCollection, where('category', '==', categoryId));
+    
+        //   (categoryId ? q : productsCollection  )
+        
+
+        getDocs (categoryId ? q : productsCollection  )
+
+
+            .then (result =>{
+            const lista = result.docs.map (product => {
+                return {  
+                    id: product.id,
+                    ...product.data()                
+                }
+            }) 
+            setProductList( lista);
+            })
+
+        
         .catch((error) => {
             console.log(error)      
         })
         .finally(() => {
             setLoading(false)
         })
-    },[categoryId])
+
+    },[categoryId]);
 
     
     return (

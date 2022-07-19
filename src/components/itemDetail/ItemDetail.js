@@ -12,7 +12,7 @@ import {cartContext} from '../../context/CartContext'
 
 function ItemDetail({productDetail}) {
 
-  const {category,price, img,stock, title, extendedName, extendedDescription, another: {anotherDescription, anotherImage}} = productDetail
+  const {category,price, img,stock, title, extendedName, extendedDescription, anotherDescription, anotherImage} = productDetail
     
 
   const [changeBoton, setChangeBoton]= useState(true)
