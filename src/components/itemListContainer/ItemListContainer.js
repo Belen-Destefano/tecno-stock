@@ -34,13 +34,13 @@ const ItemListContainer = ({greeting}) =>{
 
 
             .then (result =>{
-            const lista = result.docs.map (product => {
-                return {  
-                    id: product.id,
-                    ...product.data()                
-                }
-            }) 
-            setProductList( lista);
+                const lista = result.docs.map (product => {
+                    return {  
+                        id: product.id,
+                        ...product.data()                
+                    }
+                }) 
+                setProductList( lista);
             })
 
         

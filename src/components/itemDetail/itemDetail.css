@@ -13,10 +13,9 @@ h5{
 }
 /* text-shadow: 1px 1px 4px #000000; */
 .btngocart{
-    width: 255px;
-    margin-bottom: 0px;
-    margin-top: 21px;
+    width: 255px;  
     margin-bottom: 21px;
+    height: 3em;
 }
 
 a {
