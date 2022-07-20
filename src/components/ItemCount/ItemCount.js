@@ -3,7 +3,7 @@ import React from 'react'
 import useItemCount from './useItemCount'
 
 import './ItemCount.css'
-import imagen from '../../assets/imagen.png'
+
 
 
 
@@ -24,7 +24,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
 
             {/* <a className='waves-effect waves-light btn   grey darken-4 btnAdd' onClick={()=> onAdd(quantity)} >Agregar al carrito</a> */}
-            <a className='waves-effect waves-light btn   grey darken-4 btnAdd' onClick={()=> onAdd(quantity)} >Agregar al carrito</a>
+            <button className='waves-effect waves-light btn   grey darken-4 btnAdd' onClick={()=> onAdd(quantity)} >Agregar al carrito</button>
 
 
         </div>     

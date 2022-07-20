@@ -8,14 +8,14 @@ const CustomProvider = ({ children }) => {
     const [products, setProducts] = useState ([]);    
     const [quantityProduct, setQuantityProduct]= useState(0);
 
-    const quantityCart = () => {
-        //   para esto foreach o reduce. 1ero ouso qty como const, desp lo cambio a let. antes de guardar esto en un useEffect, mando como value quantity cart. despues lo saco, q sea una funcion interna total paso el state quantityProduct
-        let qty = 0;
-        products.forEach (product => qty += product.qty);
-        setQuantityProduct(qty);    
-    }
-
+   
     useEffect(()=>{
+        const quantityCart = () => {
+            //   para esto foreach o reduce. 1ero ouso qty como const, desp lo cambio a let. antes de guardar esto en un useEffect, mando como value quantity cart. despues lo saco, q sea una funcion interna total paso el state quantityProduct
+            let qty = 0;
+            products.forEach ((product) => (qty += product.qty));
+            setQuantityProduct(qty);    
+        };    
         quantityCart();
     }, [products]);
 
