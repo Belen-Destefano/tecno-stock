@@ -7,6 +7,7 @@ const CustomProvider = ({ children }) => {
 
     const [products, setProducts] = useState ([]);    
     const [quantityProduct, setQuantityProduct]= useState(0);
+    const [addingPrice, setAddingPrice]= useState(0);
 
    
     useEffect(()=>{
@@ -34,13 +35,24 @@ const CustomProvider = ({ children }) => {
         }       
     };
 
-    //ACA LAS DOS FORMAS DE CALCULAR TOTAL. 
+    //ACA LAS DOS FORMAS DE CALCULAR TOTAL.     
 
-    const addingPrice = ()=> {
-        let total= 0;    
-        products.forEach(product => { total += (product.price * product.qty)});
-        return total
-    }
+    useEffect(()=>{
+        const priceFunction = ()=> {
+            let total= 0;    
+            products.forEach(product => { total += (product.price * product.qty)});
+            setAddingPrice (total)
+        };
+        priceFunction()
+              
+    }, [products]);
+
+    // const addingPrice = ()=> {
+    //     let total= 0;    
+    //     products.forEach(product => { total += (product.price * product.qty)});
+    //     return total
+    // }
+
     // const total = () => {
     //     products.reduce ((acum, actual)=> acum + actual.price * actual.qty, 0)
     // }

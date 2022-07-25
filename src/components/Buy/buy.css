@@ -1,0 +1,50 @@
+.btnBuy{
+    /* width: 100%; */
+    width: 90%;    
+    margin: 4% 5%;
+    
+}
+
+.btnDetail {
+    margin: 1% 12%;
+    color: #2c7499;
+}
+
+.formContainer{
+    
+    width: 92%;
+    margin: auto;
+    border: solid 1px #a89393;
+    padding: 16px;
+}
+
+.finishContainer{
+    
+    width: 92%;
+    margin: auto;
+    border: solid 1px #a89393;
+    padding: 16px;
+    height: 236px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* input{
+    height: 1rem !important;
+} */
+
+input{
+    /* border: solid #a89393 1px !important; */
+    height: 2rem !important;
+}
+
+.textInfo{
+    text-align: center;
+    color: #525252;
+}
+
+.btnSubmit{
+    width: 90%;
+    margin: 4% 5%;
+}
+

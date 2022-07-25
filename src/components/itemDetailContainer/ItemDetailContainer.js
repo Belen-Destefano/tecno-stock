@@ -3,7 +3,7 @@ import ItemDetail from '../itemDetail/ItemDetail'
 
 
 import {useParams} from 'react-router-dom';
-import { getProduct } from '../../mocks/fakeApi';
+// import { getProduct } from '../../mocks/fakeApi';
 
 import {db} from '../../firebase/firebase';
 import {getDoc, doc, collection} from 'firebase/firestore'

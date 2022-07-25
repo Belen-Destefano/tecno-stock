@@ -5,6 +5,7 @@ import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
+import OrderDetailContainer from './components/OrderDetailContainer/OrderDetailContainer';
 
 import CustomProvider from './context/CartContext';
 
@@ -28,7 +29,7 @@ function App() {
           <Route path='/categoria/:categoryId' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
           <Route path='/producto/:productId' element={<ItemDetailContainer/>}/>
           <Route path='/carrito' element={<Cart/>}/>
-
+          <Route path='/detalle/:idBuy' element={<OrderDetailContainer/>}/>
         </Routes>
       </CustomProvider>
       <Footer/>

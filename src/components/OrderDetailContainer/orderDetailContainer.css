@@ -1,0 +1,17 @@
+.detailContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.productListt{
+    display: flex;
+    flex-direction: row;
+}
+
+.H2orderDetail{
+    
+    font-size: 2em;
+    margin: 4%;
+    text-align: left;
+    
+}

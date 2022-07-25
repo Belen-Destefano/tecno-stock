@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import {cartContext} from '../../context/CartContext'
 import './cart.css'
 import {Link} from "react-router-dom";
+import Buy from '../Buy/Buy'
+
 
 function Cart() {
 
   const {products,deleteProduct, clear, addingPrice }=useContext(cartContext)
 
-  const totalPrice = addingPrice () 
+  const totalPrice = addingPrice
 
   if (products.length) {
 
@@ -37,12 +39,15 @@ function Cart() {
             }) 
           }   
 
-          <div>          
+          <div>     
+           <Link className='btnMas center-align' to={`/`}>  <p> Ver mas productos </p> </Link>     
             <br/>
-            <hr />
+            {/* <hr /> */}
+            {/* <br/> */}
             <h5  className='center-align'  >Total: ${ totalPrice} </h5>
-            <Link className='btnMas center-align' to={`/`}>  <p> Ver mas productos </p> </Link>
-            <Link to="/carrito" className='linkBtnBuy'><button className='waves-effect waves-light btn deep-orange accent-4 btnBuy'>Comprar</button></Link>     
+            
+            <Buy/>
+            {/* <Link to="/carrito" className='linkBtnBuy'><button className='waves-effect waves-light btn deep-orange accent-4 btnBuy'>Comprar</button></Link>      */}
           </div>
         </section>
       </div>
@@ -52,7 +57,7 @@ function Cart() {
 
   else {
     return (
-      <div className='background'>
+      <div className='background'>        
         <section className='cartContainer'>
           <h2 className='center-align'>Carrito</h2>
   

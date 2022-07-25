@@ -55,19 +55,11 @@
     background-color: #0000000f;
 }
 
-.btnBuy {
-    width: 90%;    
-    margin: 4% 5%;
-}
 
-.linkBtnBuy{
-    width: 100%;
-    
-}
 
 .btnMas{
     margin: 1% 29%;
-    color: #525252;
+    color: #2c7499;
 }
 
 
@@ -162,5 +154,9 @@
 @media only screen and (max-width: 360px){
 .btnCartVolver {
     margin: 4% 30%;
+}
+
+.btnMas {
+    margin: 1% 33%;
 }
 }
