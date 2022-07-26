@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import './orderDetailContainer.css'
 
 import {cartContext} from '../../context/CartContext'
@@ -8,12 +8,9 @@ import { useParams } from 'react-router-dom';
 function OrderDetail() {
     
     
-    const {idBuy}= useParams();
-    const {products, addingPrice}=useContext(cartContext)   
-    
+  const {idBuy}= useParams();
+  const {products, addingPrice}=useContext(cartContext)   
 
-    console.log(products);
-  
 
   return (
     <div>  
@@ -25,6 +22,7 @@ function OrderDetail() {
         <section className='detailContainer'>         
             <h2 className='H2orderDetail'>Precio Total: {addingPrice}</h2>
             <h2 className='H2orderDetail'>Orden de compra: {idBuy}</h2>
+           
         </section>
 
 

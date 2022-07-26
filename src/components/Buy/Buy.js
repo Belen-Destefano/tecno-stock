@@ -16,16 +16,17 @@ function Buy() {
 
     const {products, addingPrice} = useContext(cartContext);
     const [idBuy, setIdBuy]= useState("")
-    let userInfo = {mail: ""}
+    const [userInfo, setUserInfo]= useState({});
 
+    
 
     const submitForm = (e) => {
         e.preventDefault();     
         if (e.target.parentElement[0].value !== "" && e.target.parentElement[1].value !== ""){
-            userInfo = { mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value}
-          
+           setUserInfo({ mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value}); 
+            
 
-            //vaciando inputs          
+            // vaciando inputs          
             e.target.parentElement[0].value = "";  e.target.parentElement[1].value = "";   
                 
             //cambiando boton
@@ -49,6 +50,7 @@ function Buy() {
     
   
     const buyEnd = () => {
+        
 
         const buyCollection = collection (db, 'ventas');
         addDoc (buyCollection, {
@@ -62,6 +64,7 @@ function Buy() {
 
         })
         setChangeOrderNum(true);
+        
         
     }
  
