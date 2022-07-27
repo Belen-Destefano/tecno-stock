@@ -7,6 +7,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 import {cartContext} from '../../context/CartContext'
 
 
+
 // PROBANDO ITEM COUNT ACA
 
 
@@ -54,7 +55,7 @@ function ItemDetail({productDetail}) {
           <Link className='btnMore center-align' to={`/`}>  <p> Ver mas productos </p> </Link>
           <br />
           <br />
-          { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> : <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>   }           
+          { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> :  <Link to="/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>    }           
         </div>         
 
       </div>

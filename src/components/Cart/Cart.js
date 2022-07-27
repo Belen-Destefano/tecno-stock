@@ -41,13 +41,10 @@ function Cart() {
 
           <div>     
            <Link className='btnMas center-align' to={`/`}>  <p> Ver mas productos </p> </Link>     
-            <br/>
-            {/* <hr /> */}
-            {/* <br/> */}
+            <br/>         
             <h5  className='center-align'  >Total: ${ totalPrice} </h5>
             
             <Buy/>
-            {/* <Link to="/carrito" className='linkBtnBuy'><button className='waves-effect waves-light btn deep-orange accent-4 btnBuy'>Comprar</button></Link>      */}
           </div>
         </section>
       </div>

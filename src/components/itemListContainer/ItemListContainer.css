@@ -50,9 +50,90 @@
     box-shadow: 3px 4px 10px #6d6d6deb;
 }
 
+.imgBannerPagoTwo{
+    box-shadow: 3px 4px 10px #6d6d6deb;
+    display: none;
+}
+
 .bannerContainer{
     justify-content: center;
     display: flex;
     flex-direction: row;
     margin-bottom: 4%;
+}
+
+
+@media only screen and (max-width: 412px) {
+  
+    h5{
+        margin: 0px !important;
+    }
+
+    h3 {
+        
+        margin: 5% 1%;        ;
+        font-weight: 500;
+        font-size: 24PX;
+    }
+
+    .priceHome {
+        font-size: 12px;
+    }
+    .greetingContainer {
+        width: 26em;
+        background-color: #020a1599;
+        height: 20em;
+        margin-left: 6%;
+        padding-top: 12%;
+    }
+
+    .itemContainer {
+        width: 194px;
+
+    }
+
+    .textHeight {
+        height: 18em;
+  
+    }
+
+    .imgBannerPago{
+        box-shadow: 3px 4px 10px #6d6d6deb;
+        display: none;
+    }
+    
+    .imgBannerPagoTwo{
+        box-shadow: 3px 4px 10px #6d6d6deb;
+        display: block;
+    }
+
+    .bannerContainer {
+   
+        margin: 29px 6px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .greetingTwo {
+        font-weight: 100;
+    }
+
+    .greeting {
+        font-size: 3em;
+    }
+
+    .greetingContainer {
+    
+        margin-left: 0%;
+    }
+
+    .itemContainer {
+        width: 169px;
+    }
+
+    
+    .textHeight {
+        height: 19em;
+        text-align: justify;
+    }
 }

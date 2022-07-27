@@ -27,7 +27,7 @@ const item = ({product}) => {
                 <p className='textHeight'>{description}</p>
                  <Link to={`/producto/${product.id}`} className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</Link>
             </div>
-            
+         
 
 
         </div>    

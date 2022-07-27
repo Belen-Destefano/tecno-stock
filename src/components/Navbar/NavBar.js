@@ -10,16 +10,21 @@ import { useEffect } from "react";
 import {Link, NavLink} from "react-router-dom";
 
 
+
 const menuItems = [
     {
-        id: "01", label: "Televisores", route:"/categoria/Televisores",
+        id: "04", label: "Home", route:"/",
     },
     {
-        id: "02", label: "Sonido", route:"/categoria/Sonido",
+        id: "01", label: "Televisores", route:"categoria/Televisores",
     },
     {
-        id: "03", label: "Camaras", route:"/categoria/Camaras",
+        id: "02", label: "Sonido", route:"categoria/Sonido",
     },
+    {
+        id: "03", label: "Camaras", route:"categoria/Camaras",
+    },
+  
 
 ]
 
@@ -68,7 +73,7 @@ const NavBar = () =>{
                               
 
             <ul className="sidenav" id="mobile-demo">
-
+                
                 {menuItems.map((item)=> (
                     <li key={item.id}>
                         <NavLink to={item.route}> {item.label}</NavLink>
@@ -76,6 +81,8 @@ const NavBar = () =>{
                 ) )}
                              
             </ul>
+
+            
            
                
         </>    
