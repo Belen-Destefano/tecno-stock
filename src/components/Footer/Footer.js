@@ -7,13 +7,16 @@ import {Link} from "react-router-dom";
 
 const menuItems = [
   {
-      id: "01", label: "Televisores", route:"/categoria/Televisores",
+    id: "04", label: "Home", route:"/tecno-stock",
   },
   {
-      id: "02", label: "Sonido", route:"/categoria/Sonido",
+      id: "01", label: "Televisores", route:"/tecno-stock/categoria/Televisores",
   },
   {
-      id: "03", label: "Camaras", route:"/categoria/Camaras",
+      id: "02", label: "Sonido", route:"/tecno-stock/categoria/Sonido",
+  },
+  {
+      id: "03", label: "Camaras", route:"/tecno-stock/categoria/Camaras",
   },
 
 ]
