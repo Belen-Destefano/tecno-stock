@@ -44,7 +44,7 @@ const NavBar = () =>{
                 <nav>       
                     <div className="nav-wrapper blue-grey darken-3">                
                         
-                        <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>                   
+                        <Link to="/tecno-stock" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>                   
                         <Link to="#" data-target="mobile-demo" className="sidenav-trigger">  <i className="material-icons">menu</i> </Link>
                     
                         <ul className="right hide-on-med-and-down">
@@ -62,7 +62,7 @@ const NavBar = () =>{
 
                 
 
-                        <Link to="/carrito"  style= {styles.cartContainer}  className="right ">
+                        <Link to="/tecno-stock/carrito"  style= {styles.cartContainer}  className="right ">
                                 <CartWidget/>     
                         </Link>          
 

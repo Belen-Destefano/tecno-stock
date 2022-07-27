@@ -16,7 +16,7 @@ const item = ({product}) => {
             
             <div className='img-Container'> 
                
-                <Link to={`/producto/${product.id}`}> <img className='responsive-img' src={img} alt="{name}" /></Link>
+                <Link to={`/tecno-stock/producto/${product.id}`}> <img className='responsive-img' src={img} alt="{name}" /></Link>
             </div>
 
             <div className='descriptionContainer'>
@@ -25,7 +25,7 @@ const item = ({product}) => {
                 <h5 className='priceHome'>${price} - Precio en un pago</h5>
                 <img className='estrellas' src="https://i.postimg.cc/QCpgX1Nm/estrellas.jpg" alt="" />
                 <p className='textHeight'>{description}</p>
-                 <Link to={`/producto/${product.id}`} className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</Link>
+                 <Link to={`/tecno-stock/producto/${product.id}`} className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</Link>
             </div>
          
 

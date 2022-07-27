@@ -24,12 +24,12 @@ function App() {
         <NavBar />
         <Routes> 
 
-          <Route path='/' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
+          <Route path='/tecno-stock' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
           {/* categorias tiene mismo componente en el elemento por que voy a trabajar sobre el mismo componente filtrandolo para conseguirlo. */}
-          <Route path='categoria/:categoryId' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
-          <Route path='producto/:productId' element={<ItemDetailContainer/>}/>
-          <Route path='carrito' element={<Cart/>}/>
-          <Route path='detalle/:idBuy' element={<OrderDetailContainer/>}/>
+          <Route path='/tecno-stock/categoria/:categoryId' element= {<ItemListContainer greeting="Tecno-Stock" />}/>
+          <Route path='/tecno-stock/producto/:productId' element={<ItemDetailContainer/>}/>
+          <Route path='/tecno-stock/carrito' element={<Cart/>}/>
+          <Route path='/tecno-stock/detalle/:idBuy' element={<OrderDetailContainer/>}/>
         </Routes>
       </CustomProvider>
       <Footer/>

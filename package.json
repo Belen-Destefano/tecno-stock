@@ -1,4 +1,5 @@
 {
+  "homepage":"https://Belen-Destefano.github.io/tecno-stock",  
 
   "name": "practicar",
 
@@ -31,6 +32,10 @@
   },
 
   "scripts": {
+
+    "predeploy": "npm run build",
+
+    "deploy": "gr-pages -d build",
 
     "start": "react-scripts start",
 
@@ -75,6 +80,12 @@
       "last 1 safari version"
 
     ]
+
+  },
+
+  "devDependencies": {
+
+    "gh-pages": "^4.0.0"
 
   }
 
