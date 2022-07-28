@@ -1,5 +1,5 @@
 # React App Tecno-Stock
-[Ver la pagina](ACA PONER LA PAG DESP)
+[Ver la pagina](https://belen-destefano.github.io/tecno-stock/)
 
 **App creada para la venta de productos de electrónica de consumo, audio y cámaras profesionales.**
 
