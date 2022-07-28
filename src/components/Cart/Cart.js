@@ -16,6 +16,7 @@ function Cart() {
     return (
 
       <div className='background'>
+
         <section className='cartContainer'>
           <i  onClick={()=> clear()} className="material-icons tiny deleteBtn">clear</i>    
           <h2 className='center-align'>Carrito</h2>
@@ -40,15 +41,16 @@ function Cart() {
           }   
 
           <div>     
-           <Link className='btnMas center-align' to={`/tecno-stock`}>  <p> Ver mas productos </p> </Link>     
+            <Link className='btnMore center-align' to={`/tecno-stock`}>  <p> Ver mas productos </p> </Link>     
             <br/>         
-            <h5  className='center-align'  >Total: ${ totalPrice} </h5>
-            
+            <h5  className='center-align'  >Total: ${ totalPrice} </h5> 
+
             <Buy/>
           </div>
-        </section>
-      </div>
 
+        </section>
+
+      </div>
     )
   }
 
@@ -59,7 +61,7 @@ function Cart() {
           <h2 className='center-align'>Carrito</h2>
   
          <div > <h4 className='center-align '> No hay productos </h4>
-            <Link className='btnCartVolver center-align' to={`/tecno-stock`}>  <p> Volver a Productos </p> </Link>
+            <Link className='btnCartReturn center-align' to={`/tecno-stock`}>  <p> Volver a Productos </p> </Link>
           </div> 
           
           

@@ -23,13 +23,10 @@ function Buy() {
     const submitForm = (e) => {
         e.preventDefault();     
         if (e.target.parentElement[0].value !== "" && e.target.parentElement[1].value !== ""){
-           setUserInfo({ mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value}); 
-            
-
-            // vaciando inputs          
+           setUserInfo({ mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value});             
+      
             e.target.parentElement[0].value = "";  e.target.parentElement[1].value = "";   
-                
-            //cambiando boton
+        
             setChangeComponentForm(true)
         }
         
@@ -103,7 +100,7 @@ function Buy() {
                 <div className='finishContainer valign-wrapper'>
                     
                     <h6 className='center-align '>Tus datos fueron ingresados</h6>
-                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden: {idBuy} </h6> <Link className='btnDetail center-align' to={`/detalle/${idBuy}`}>  <p> Ver Detalles de la Compra </p> </Link>      </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
+                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden: {idBuy} </h6> <Link className='btnDetail center-align' to={`/tecno-stock/detalle/${idBuy}`}>  <p> Ver Detalles de la Compra </p> </Link>      </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
                    
 
                 </div> 

@@ -7,15 +7,7 @@
     padding: 2%;
     position: relative;
     left: 74%;
-    background: whitesmoke;
-
- 
-    /* width: 25em;
-    padding: 2%;
-    position: relative;
-    left: 66em;
-    background: whitesmoke;  */
-    
+    background: whitesmoke;    
 }
 
 .textCart{
@@ -43,8 +35,7 @@
 }
 
 
-
-.btnCartVolver{
+.btnCartReturn{
     color: black;
     margin: 4% 24%;
     padding: 3%;
@@ -60,7 +51,7 @@
 
 
 
-.btnMas{
+.btnMore{
     margin: 1% 29%;
     color: #2c7499;
 }
@@ -69,7 +60,7 @@
 
 @media only screen and (max-width: 1200px) {
 
-    .btnCartVolver {
+    .btnCartReturn {
         margin: 4% 35%;
     }
 
@@ -90,7 +81,7 @@
         justify-content: center;
     }
 
-    .btnMas {
+    .btnMore {
         margin: 2% 38%;
     }
 
@@ -102,7 +93,7 @@
 
 @media only screen and (max-width: 768px) {
 
-    .btnCartVolver {
+    .btnCartReturn {
         margin: 4% 39%;
     }
 
@@ -133,14 +124,14 @@
         margin: 4% 26%;
     }
 
-
-    .btnMas {
+    
+    .btnMore {
         margin: 2% 42%;
     }
 }
 
 @media only screen and (max-width: 412px){
-    .btnCartVolver {
+    .btnCartReturn {
         margin: 4% 32%;
     }
 
@@ -149,17 +140,17 @@
         margin: 5% 17%;
     }
 
-    .btnMas {
+    .btnMore {
         margin: 1% 35%;
     }
 }
 
 @media only screen and (max-width: 360px){
-.btnCartVolver {
+.btnCartReturn {
     margin: 4% 30%;
 }
 
-.btnMas {
+.btnMore {
     margin: 1% 33%;
 }
 }

@@ -7,22 +7,15 @@ import 'materialize-css/dist/css/materialize.min.css'
 import {cartContext} from '../../context/CartContext'
 
 
-
-// PROBANDO ITEM COUNT ACA
-
-
 function ItemDetail({productDetail}) {
 
-  const {category,price, img,stock, title, extendedName, extendedDescription, anotherDescription, anotherImage} = productDetail
-    
+  const {category,price, img,stock, title, extendedName, extendedDescription, anotherDescription, anotherImage} = productDetail    
 
   const [changeBoton, setChangeBoton]= useState(true)
 
-  // ACAAAAAAAAA CONTEXTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-  const {addProduct}=useContext(cartContext)
-  
+  const {addProduct}=useContext(cartContext)  
 
-  // ITEM COUNT FUNCTION
+
   function onAdd(quantity) {      
 
     const product = {...productDetail, qty: quantity } 
@@ -37,8 +30,7 @@ function ItemDetail({productDetail}) {
       <div className='frontProduct'>
         <h2 className='frontTitle'>{category}</h2>
         <Link to={`/tecno-stock`}> <p> Home </p> </Link>
-        <Link to={`/tecno-stock/categoria/${category}`}> <p> / Categoria </p> </Link>
-       
+        <Link to={`/tecno-stock/categoria/${category}`}> <p> / Categoria </p> </Link>       
        
       </div>
       
@@ -49,7 +41,7 @@ function ItemDetail({productDetail}) {
           <h2>{extendedName}</h2>
         </div>
         
-        {/* ITEMCOUNT */}   
+
         <div>
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>  
           <Link className='btnMore center-align' to={`/tecno-stock`}>  <p> Ver mas productos </p> </Link>
