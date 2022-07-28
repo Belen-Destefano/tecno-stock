@@ -1,27 +1,43 @@
-import React from 'react'
+
+import React, { useEffect, useState } from 'react';
 import './footer.css'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import logo from'../../assets/logo.jpg';
 import {Link} from "react-router-dom";
 
-const menuItems = [
-  {
-    id: "04", label: "Home", route:"/tecno-stock",
-  },
-  {
-      id: "01", label: "Televisores", route:"/tecno-stock/categoria/Televisores",
-  },
-  {
-      id: "02", label: "Sonido", route:"/tecno-stock/categoria/Sonido",
-  },
-  {
-      id: "03", label: "Camaras", route:"/tecno-stock/categoria/Camaras",
-  },
+import {db} from "../../firebase/firebase";
+import { getDocs, collection } from 'firebase/firestore';
 
-]
 
 function Footer() {
+
+  const [categories, setCategories]= useState([])
+
+  useEffect (()=> {      
+
+    getDocs ( collection(db, 'categorias') )
+
+
+        .then (result =>{
+            const lista = result.docs.map (category => {
+                return {  
+                    id: category.id,
+                    ...category.data()                
+                }
+            }) 
+            setCategories( lista);
+        })
+
+    
+    .catch((error) => {
+        console.log(error)      
+    })
+  
+  },[]);
+
+
+
   return (
 
 
@@ -36,7 +52,7 @@ function Footer() {
             <h5 className="white-text">Menu</h5>
             <ul>
 
-              {menuItems.map((item)=> (
+              {categories.map((item)=> (
                   <li className='center-align' key={item.id}>
                       <Link className="white-text text-lighten-3 center-align" to={item.route} > {item.label}</Link>
                   </li>

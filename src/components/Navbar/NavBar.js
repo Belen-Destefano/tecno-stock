@@ -1,42 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css'
 
 import logo from'../../assets/logo.jpg';
 import CartWidget from "../CartWidget/CartWidget";
-// importo esta funcion que se usa para inicializar materialize
-import { useEffect } from "react";
+
+import {db} from "../../firebase/firebase";
+import { getDocs, collection } from 'firebase/firestore';
+
+
 import {Link, NavLink} from "react-router-dom";
 
 
 
-const menuItems = [
-    {
-        id: "04", label: "Home", route:"/tecno-stock",
-    },
-    {
-        id: "01", label: "Televisores", route:"/tecno-stock/categoria/Televisores",
-    },
-    {
-        id: "02", label: "Sonido", route:"/tecno-stock/categoria/Sonido",
-    },
-    {
-        id: "03", label: "Camaras", route:"/tecno-stock/categoria/Camaras",
-    },
-  
-
-]
-
 const NavBar = () =>{
-  
-    // para inicializar menu hamburguesa de materialize
-    useEffect(() => {
+    
+    const [categories, setCategories]= useState([])
+    useEffect (()=> {
 
+        //Mobile Collapse Materialize
         var elems = document.querySelectorAll(".sidenav");    
         M.Sidenav.init(elems);
-    
-    }, []);
+        //
+
+        getDocs ( collection(db, 'categorias') )
+
+            .then (result =>{
+                const lista = result.docs.map (category => {
+                    return {  
+                        id: category.id,
+                        ...category.data()               
+                    }
+                }) 
+                setCategories( lista);
+            })
+
+        
+        .catch((error) => {
+            console.log(error)      
+        });
+    },[]);
+   
   
     return(
         <>         
@@ -49,48 +54,33 @@ const NavBar = () =>{
                     
                         <ul className="right hide-on-med-and-down">
 
+                            {categories.map((item)=> (
+                                <li  key={item.id}> <NavLink to={item.route} className="nav-item" > {item.label}</NavLink></li>                                
+                            ))}            
 
-                            {menuItems.map((item)=> (
-                                <li  key={item.id}>
-                                 <NavLink to={item.route} className="nav-item" > {item.label}</NavLink>
-                                
-                                </li>
-                                
-                            ) )}
-                        
-                        </ul>               
-
-                
+                        </ul>                               
 
                         <Link to="/tecno-stock/carrito"  style= {styles.cartContainer}  className="right ">
-                                <CartWidget/>     
+                            <CartWidget/>     
                         </Link>          
 
-                    </div>                  
-                        
+                    </div>    
                 </nav>
             </div>                    
                               
 
             <ul className="sidenav" id="mobile-demo">
                 
-                {menuItems.map((item)=> (
+                {categories.map((item)=> (
                     <li key={item.id}>
                         <NavLink to={item.route}> {item.label}</NavLink>
                     </li>
                 ) )}
-                             
-            </ul>
 
-            
-           
+            </ul>              
                
-        </>    
-            
+        </>               
     )
-    
-  
-
 }
 
 const styles = {
