@@ -18,9 +18,17 @@ function Buy() {
     const [idBuy, setIdBuy]= useState("")
     const [userInfo, setUserInfo]= useState({});
 
+    const FoundOrderBtn = (e) => {
+        e.preventDefault();          
+
+        setIdBuy( e.target.parentElement[0].value)      
+        setChangeComponentForm(true);
+        setChangeOrderNum(true);       
+    }
     
 
-    const submitForm = (e) => {
+    const submitForm = (e) => {        
+      
         e.preventDefault();     
         if (e.target.parentElement[0].value !== "" && e.target.parentElement[1].value !== ""){
            setUserInfo({ mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value});             
@@ -70,6 +78,22 @@ function Buy() {
 
         return (
         <>
+            <div  className='foundOrderForm'>   
+                <form className='FoundOrderForm'>                   
+                 
+                    {/* <p className='textInfo'>Buscar compra realizada</p> */}
+                        <div className="input-field inline">
+                            <input id="email_inline" type="text" className="validate"/>
+                            <label htmlFor="email_inline">Ingresar numero de compra</label>
+                            <span className="helper-text" data-error="wrong" data-success="right">Buscar detalles de compra realizada</span>
+                        </div>
+                            
+                   
+                   
+                    <input className='btnSubmit' type="submit" value="Enviar información" onClick={FoundOrderBtn}></input>                  
+                </form>
+            </div>
+
             <br />
             
             <div  className='formContainer'>                
@@ -100,16 +124,13 @@ function Buy() {
                 <div className='finishContainer valign-wrapper'>
                     
                     <h6 className='center-align '>Tus datos fueron ingresados</h6>
-                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden: {idBuy} </h6> <Link className='btnDetail center-align' to={`/tecno-stock/detalle/${idBuy}`}>  <p> Ver Detalles de la Compra </p> </Link>      </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
+                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden: {idBuy} </h6> <Link className='btnDetail center-align' to={`/tecno-stock/detalle/${idBuy}`}>  <p> Ver Detalles de la Compra </p> </Link> </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
                    
 
                 </div> 
             </>
         )
     }
-
-        
-    
        
 }
 

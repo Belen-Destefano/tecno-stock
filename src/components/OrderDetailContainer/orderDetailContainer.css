@@ -1,17 +1,17 @@
-.detailContainer{
-    display: flex;
-    flex-direction: column;
+
+.orderDetailContainer{
+    margin: 3%;
+    
 }
 
-.productListt{
+.productContainer{
     display: flex;
     flex-direction: row;
+    width: 78%;
+    justify-content: space-between;
 }
 
-.H2orderDetail{
-    
-    font-size: 2em;
-    margin: 4%;
-    text-align: left;
-    
+.productName{
+    width: 30%;
 }
+

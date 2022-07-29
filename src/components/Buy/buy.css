@@ -1,3 +1,10 @@
+.foundOrderForm{
+    width: 92%;
+    margin: auto;
+    border: solid 1px #a89393;
+    padding: 16px;
+}
+
 .btnBuy{
     /* width: 100%; */
     width: 90%;    

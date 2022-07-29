@@ -21,9 +21,9 @@ const item = ({product}) => {
 
             <div className='descriptionContainer'>
                 
-                <h4>{name} </h4>
+                <h4 className='tittleProducts'>{name} </h4>
                 <h5 className='priceHome'>${price} - Precio en un pago</h5>
-                <img className='estrellas' src="https://i.postimg.cc/QCpgX1Nm/estrellas.jpg" alt="" />
+                <img className='star' src="https://i.postimg.cc/QCpgX1Nm/estrellas.jpg" alt="" />
                 <p className='textHeight'>{description}</p>
                  <Link to={`/tecno-stock/producto/${product.id}`} className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</Link>
             </div>

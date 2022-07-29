@@ -12,6 +12,7 @@ function OrderDetail() {
     
   const {idBuy}= useParams();
   const [order, setOrder]= useState([])
+  const [orderProducts, setOrderProducts]= useState([])
   
   
   useEffect (()=> {   
@@ -22,49 +23,39 @@ function OrderDetail() {
     getDoc ( refDoc )  
 
     .then((res) => {
-      setOrder( {id: res.id, ...res.data()});             
+      
+      setOrder( {id: res.id, ...res.data()}); 
+      setOrderProducts ( res.data().products);            
     })
     .catch((error) => {
       console.log(error)      
     })    
-    // .finally(() => {
-    //   console.log(order);
-    // })    
+
     
   },[idBuy]);
   
-  const {id,totalPrice, products} = order    
-  console.log(products);
-  
+  const {id,totalPrice} = order    
 
-  
+
 
 
   return (
-  <div>  
-    <h5>GRACIAS POR TU COMPRA!!</h5>
+  
+  <div className='orderDetailContainer'>  
+    <h4 >GRACIAS POR TU COMPRA!!</h4>
+    <h6>Orden de compra {id}</h6>
+    <br />
 
-    <h5>Orden de compra {id}</h5>
-
-    {/* {  products.map(item=>{
-      return <h1 key={item.id}> {item.name} </h1>
-    })} */}
-
-
-    {/* <ul className="right hide-on-med-and-down">
-
-      {products.map((product)=> (
-          <li  key={product.id}>  {product.name}</li>                            
-      ))}            
-
-    </ul>   */}
-   
+    {  orderProducts.map(item=>{
+      return <div className='productContainer' key={item.price}> 
+        <h6 className='productName'> Producto: {item.name} </h6> 
+        <h6> Precio por unidad: {item.price} </h6> 
+        <h6> Cantidad {item.quantity} </h6> 
       
-    <h5>Total ${totalPrice}</h5>
-       
-
-
-        
+      </div>
+    })} 
+      
+    <h4>Total ${totalPrice}</h4>
   </div>
 
   )

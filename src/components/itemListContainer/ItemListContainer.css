@@ -93,8 +93,7 @@
     }
 
     .textHeight {
-        height: 18em;
-  
+        height: 12em;
     }
 
     .imgBannerPago{
@@ -133,7 +132,7 @@
 
     
     .textHeight {
-        height: 19em;
+        height: 13em;
         text-align: justify;
     }
 }

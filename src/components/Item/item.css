@@ -1,3 +1,9 @@
+.tittleProducts{
+    padding: 0% !important;
+    margin: 2% 0% !important;
+}
+
+
 h4{
     font-weight: 350;  
     font-size: 25px;
@@ -12,7 +18,7 @@ h5{
 }
 
 
-.textHeight{       height: 9em; font-size: 11px;}
+.textHeight{       height: 7em; font-size: 11px;}
 
 .descriptionContainer{
     background-color: white;
@@ -20,17 +26,20 @@ h5{
 }
 
 .priceHome{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     text-align: left;
+    padding: 0% !important;
+    margin: 2% 0% !important;
 }
 
-.estrellas{
+.star{
     width: 6em;
+    margin: 1% 0%;
 }
 
 .itemContainer{
-    width: 343px;
+    width: 286px;
     margin: 1%;
     border: 1px solid #b2b2b2c2!important;
     /* box-shadow: 2px -1px 11px #add8e680; */
