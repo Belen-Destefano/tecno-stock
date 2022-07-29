@@ -17,16 +17,8 @@ function Buy() {
     const {products, addingPrice} = useContext(cartContext);
     const [idBuy, setIdBuy]= useState("")
     const [userInfo, setUserInfo]= useState({});
-
-    const FoundOrderBtn = (e) => {
-        e.preventDefault();          
-
-        setIdBuy( e.target.parentElement[0].value)      
-        setChangeComponentForm(true);
-        setChangeOrderNum(true);       
-    }
+  
     
-
     const submitForm = (e) => {        
       
         e.preventDefault();     
@@ -74,27 +66,11 @@ function Buy() {
     }
  
     
-    if (  !changeComponentForm ) {
+    if (  !changeComponentForm) {
 
         return (
         <>
-            <div  className='foundOrderForm'>   
-                <form className='FoundOrderForm'>                   
-                 
-                    {/* <p className='textInfo'>Buscar compra realizada</p> */}
-                        <div className="input-field inline">
-                            <input id="email_inline" type="text" className="validate"/>
-                            <label htmlFor="email_inline">Ingresar numero de compra</label>
-                            <span className="helper-text" data-error="wrong" data-success="right">Buscar detalles de compra realizada</span>
-                        </div>
-                            
-                   
-                   
-                    <input className='btnSubmit' type="submit" value="Enviar información" onClick={FoundOrderBtn}></input>                  
-                </form>
-            </div>
-
-            <br />
+           
             
             <div  className='formContainer'>                
                 <p className='textInfo'>Datos para realizar la compra</p>
@@ -116,6 +92,8 @@ function Buy() {
         </>
         )
     }
+
+   
 
     else if ( changeComponentForm ) {
         return (

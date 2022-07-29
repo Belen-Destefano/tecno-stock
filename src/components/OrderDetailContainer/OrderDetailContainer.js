@@ -28,12 +28,14 @@ function OrderDetail() {
       setOrderProducts ( res.data().products);            
     })
     .catch((error) => {
-      console.log(error)      
+      console.log("Error, el numero de compra buscado no se ha encontrado")      
+     
     })    
 
     
   },[idBuy]);
   
+
   const {id,totalPrice} = order    
 
 
@@ -42,7 +44,7 @@ function OrderDetail() {
   return (
   
   <div className='orderDetailContainer'>  
-    <h4 >GRACIAS POR TU COMPRA!!</h4>
+    <h4 >DETALLE DE ORDEN DE COMPRA</h4>
     <h6>Orden de compra {id}</h6>
     <br />
 

@@ -3,6 +3,7 @@ import {cartContext} from '../../context/CartContext'
 import './cart.css'
 import {Link} from "react-router-dom";
 import Buy from '../Buy/Buy'
+import FoundOrder from '../FoundOrder/FoundOrder'
 
 
 function Cart() {
@@ -11,6 +12,7 @@ function Cart() {
 
   const totalPrice = addingPrice
 
+ 
   if (products.length) {
 
     return (
@@ -19,7 +21,10 @@ function Cart() {
 
         <section className='cartContainer'>
           <i  onClick={()=> clear()} className="material-icons tiny deleteBtn">clear</i>    
+          <FoundOrder/>
+
           <h2 className='center-align'>Carrito</h2>
+
             
           {
             products.map((product)=> {
@@ -58,14 +63,15 @@ function Cart() {
     return (
       <div className='background'>        
         <section className='cartContainer'>
+          <FoundOrder/>
           <h2 className='center-align'>Carrito</h2>
   
          <div > <h4 className='center-align '> No hay productos </h4>
             <Link className='btnCartReturn center-align' to={`/tecno-stock`}>  <p> Volver a Productos </p> </Link>
           </div> 
-          
-          
+     
         </section>
+        
       </div>
     )
   }
