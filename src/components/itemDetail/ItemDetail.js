@@ -19,8 +19,9 @@ function ItemDetail({productDetail}) {
   function onAdd(quantity) {      
 
     const product = {...productDetail, qty: quantity } 
-    addProduct(product)
+    addProduct(product)    
     setChangeBoton(false)
+   
   } 
 
 

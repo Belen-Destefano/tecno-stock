@@ -1,8 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import './ItemListContainer.css';
-// import {getData} from '../../mocks/fakeApi';
+import {cartContext} from '../../context/CartContext'
 import {useParams} from 'react-router-dom';
 
 //ACA IMPORTS DE FIREBASE
@@ -11,15 +11,22 @@ import { getDocs, collection, query, where } from 'firebase/firestore';
 
 
 
+
 const ItemListContainer = ({greeting}) =>{ 
+    
 
     const [productList, setProductList]= useState([])
     const [loading, setLoading]= useState (true)
+    
+    const {categoryId} = useParams();   
 
-    const {categoryId} = useParams();
-   
- 
+      const {getCart }=useContext(cartContext)
+        useEffect (()=> {    
+            getCart()                 
+        },[]);
 
+    
+  
     useEffect (()=> {
 
         getDocs (categoryId ? query(collection(db, 'productos'), where('category', '==', categoryId)) : collection(db, 'productos') )

@@ -18,7 +18,27 @@ const CustomProvider = ({ children }) => {
             setQuantityProduct(qty);    
         };    
         quantityCart();
+
+        localStorage.setItem("PRODUCTOS", JSON.stringify(products))
     }, [products]);
+
+    const getCart = () => {      
+    
+        let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;
+        // console.log(carritoRecuperados );
+        
+        
+        if (carritoRecuperados.length) {
+            console.log(carritoRecuperados);
+       
+            // setProducts ([]);
+            // setQuantityProduct(0);
+            for (let i = 0; i < carritoRecuperados.length; i++) {
+                let producto = carritoRecuperados[i];
+                setProducts([ producto]);                
+            }
+        } 
+    }
 
     const addProduct = (product) => {
     
@@ -33,6 +53,9 @@ const CustomProvider = ({ children }) => {
         } else{
             setProducts([...products, product]);
         }       
+       
+       
+        
     };
 
     //ACA LAS DOS FORMAS DE CALCULAR TOTAL.     
@@ -75,7 +98,7 @@ const CustomProvider = ({ children }) => {
     }
       
 
-    const  clear = (product) => {
+    const  clear = () => {
         setProducts ([]);
         setQuantityProduct(0);
     }
@@ -83,7 +106,7 @@ const CustomProvider = ({ children }) => {
 
 
     return (
-        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear } }>
+        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear, getCart } }>
             {children}
         </Provider>
     )

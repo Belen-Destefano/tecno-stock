@@ -7,10 +7,10 @@ import FoundOrder from '../FoundOrder/FoundOrder'
 
 
 function Cart() {
-
+ 
   const {products,deleteProduct, clear, addingPrice }=useContext(cartContext)
 
-  const totalPrice = addingPrice
+  const totalPrice = addingPrice 
 
  
   if (products.length) {
