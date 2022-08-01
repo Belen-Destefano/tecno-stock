@@ -45,7 +45,8 @@ function OrderDetail() {
   
   <div className='orderDetailContainer'>  
     <h4 >DETALLE DE ORDEN DE COMPRA</h4>
-    <h6>Orden de compra {id}</h6>
+    <br/>
+    <h6>Orden de compra :  {id}</h6>
     <br />
 
     {  orderProducts.map(item=>{

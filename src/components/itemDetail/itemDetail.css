@@ -112,7 +112,7 @@ a {
 }
 
 
-.btnMore {
+.btnMoreItem {
+    margin: 2% 25%;
     color: #d60606;
-    margin: 0% 25%;
 }

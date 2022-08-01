@@ -10,6 +10,7 @@ import {db} from "../../firebase/firebase";
 import { getDocs, collection, query, where } from 'firebase/firestore';
 
 
+
 const ItemListContainer = ({greeting}) =>{ 
 
     const [productList, setProductList]= useState([])
@@ -33,20 +34,20 @@ const ItemListContainer = ({greeting}) =>{
                 }) 
                 setProductList( lista);
             })
-
+            
+            
+            .catch((error) => {
+                console.log(error)      
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+            
+        },[categoryId]);
         
-        .catch((error) => {
-            console.log(error)      
-        })
-        .finally(() => {
-            setLoading(false)
-        })
-
-    },[categoryId]);
-
-    
-    return (
-        <>           
+        
+        return (
+            <>           
             <div className='greetingBackground'>
                 <div className='greetingContainer'>
                     <h2 className='greetingTwo'>DISEÑO. INNOVACIÓN.</h2>
@@ -63,9 +64,10 @@ const ItemListContainer = ({greeting}) =>{
 
             { loading? <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="cargando" /> : <ItemList productList = {productList} />}                    
         
+
         </>
   
-    )
+  )
 }
 
 export default ItemListContainer

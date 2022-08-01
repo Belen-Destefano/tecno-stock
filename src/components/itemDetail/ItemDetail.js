@@ -44,7 +44,7 @@ function ItemDetail({productDetail}) {
 
         <div>
           <h5>Precio: $<span className='ItemCount-price'>{price}</span></h5>  
-          <Link className='btnMore center-align' to={`/tecno-stock`}>  <p> Ver mas productos </p> </Link>
+          <Link className='btnMoreItem center-align' to={`/tecno-stock`}>  <p> Ver mas productos </p> </Link>
           <br />
           <br />
           { changeBoton? <ItemCount stock={stock} initial={1}  onAdd={onAdd}/> :  <Link to="/tecno-stock/carrito"><button className='waves-effect waves-light btn deep-orange accent-4 btngocart'>Ir al carrito</button></Link>    }           

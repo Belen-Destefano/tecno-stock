@@ -66,8 +66,8 @@ function Cart() {
           <FoundOrder/>
           <h2 className='center-align'>Carrito</h2>
   
-         <div > <h4 className='center-align '> No hay productos </h4>
-            <Link className='btnCartReturn center-align' to={`/tecno-stock`}>  <p> Volver a Productos </p> </Link>
+         <div > <h4 className='center-align '> No hay productos </h4>          
+            <Link className='btnMore center-align' to={`/tecno-stock`}>  <p> Volver a Productos </p> </Link>     
           </div> 
      
         </section>
