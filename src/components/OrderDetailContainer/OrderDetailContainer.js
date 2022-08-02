@@ -31,7 +31,7 @@ function OrderDetail() {
       setOrderProducts ( res.data().products);            
     })
     .catch((error) => {
-      console.log("Error, la Orden de compra no se ha encontrado")     
+        
       setError(true) 
      
     })    

@@ -11,6 +11,7 @@ Este proyecto esta compuesto por:
 * Libreria React
 * Libreria React Router Dom.
 * Materializecss "^1.0.0-rc.2" tanto para el menu como el footer e imagenes responsive
+* React-toastify: "^9.0.7" para mostrar avisos emergentes ante errores de validacion
 
 ## Reproduccion
 Pasos para reproducirlo

@@ -10,6 +10,10 @@ import {db} from '../../firebase/firebase'
 import {collection, addDoc, serverTimestamp} from 'firebase/firestore'
 
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function Buy() {
     
@@ -32,10 +36,16 @@ function Buy() {
         }
         
         else {
-            alert("faltan datos");
+            
+          
+            const notify = () => {      
+                toast.error("Completar todos los campos",{ autoClose: 2000 });}
+            notify()
+            
+          
         }     
     }
-
+  
 
     const productsMap =  products.map (product => {
         return {            
@@ -79,9 +89,10 @@ function Buy() {
             <br/>
             <br/>
             <br/>
-            <div  className='formContainer'>                
+            <div  className='formContainer'>   
+                       
                 <p className='textInfo'>Datos para realizar la compra</p>
-            
+           
                 <form >                    
                     <div className="input-field col s6">
                         <input id="email" type="email" className="validate"  />
@@ -92,7 +103,7 @@ function Buy() {
                         <label htmlFor="name">Ingresar Nombre</label>
                     </div>              
                 
-                    <input className='btnSubmit' type="submit" value="Enviar información" onClick={submitForm}></input>                    
+                    <input className='btnSubmit' type="submit" value="Enviar información" onClick={submitForm}/> <ToastContainer />                    
                 </form>                
             </div>
         
@@ -111,7 +122,7 @@ function Buy() {
                 <div className='finishContainer valign-wrapper'>
                     
                     <h6 className='center-align '>Tus datos fueron ingresados</h6>
-                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden: {idBuy} </h6> <Link className='btnDetail center-align' to={`/tecno-stock/detalle/${idBuy}`}  onClick={clearCart}>  <p> Ver Detalles de la Compra </p> </Link> </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
+                    {changeOrderNum? <> <h6 className='center-align '>Numero de Orden:  {idBuy} </h6> <Link className='btnDetail center-align' to={`/tecno-stock/detalle/${idBuy}`}  onClick={clearCart}>  <p> Ver Detalles de la Compra </p> </Link> </>:  <button className='waves-effect waves-light btn deep-orange accent-4 btnBuy' onClick={buyEnd}>Comprar</button>}
                    
 
                 </div> 

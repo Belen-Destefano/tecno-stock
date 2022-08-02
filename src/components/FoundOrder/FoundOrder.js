@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import {Link} from "react-router-dom";
 import './foundOrder.css'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function FoundOrder() {
 
     const [changeBtn, setChangeBtn]= useState(true)
@@ -16,7 +19,9 @@ function FoundOrder() {
         }
          
         else {
-            alert("faltan datos");
+            const notify = () => {      
+                toast.error("Ingresar Orden de compra",{ autoClose: 2000 });}
+            notify()
         }     
                 
     }
@@ -36,7 +41,7 @@ function FoundOrder() {
                     </div>
                 </div>
                             
-                {changeBtn?  <input className='btnSubmitFound' type="submit" value="Buscar Compra Realizada" onClick={FoundOrderBtn}></input>  :   <Link className='btnDetailFound center-align' to={`/tecno-stock/detalle/${idCheck}`}> Continuar busqueda </Link>}
+                {changeBtn?<>  <input className='btnSubmitFound' type="submit" value="Buscar Compra Realizada" onClick={FoundOrderBtn}/> <ToastContainer /> </>  :   <Link className='btnDetailFound center-align' to={`/tecno-stock/detalle/${idCheck}`}> Continuar busqueda </Link>}
                         
             </form>
     </div>
