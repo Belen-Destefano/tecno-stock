@@ -4,6 +4,9 @@ import './orderDetailContainer.css'
 import {db} from "../../firebase/firebase";
 import {getDoc, doc, collection} from 'firebase/firestore'
 import { useParams } from 'react-router-dom';
+import {Link} from "react-router-dom";
+
+
 
 
 function OrderDetail() {
@@ -46,7 +49,7 @@ function OrderDetail() {
       <h4 >ORDEN DE COMPRA NO ENCONTRADA</h4>
       <br/>
       <h6>Ingresaste :  {id}</h6>
-      <h6>Por favor, <Link to="/tecno-stock/carrito" className='btnOrderError'>volve a intentarlo</Link> y asegurate de escribirlo correctamente y que no haya espacios</h6>      
+      <h6>Por favor, <Link to="/tecno-stock/carrito" className='btnOrderError'>volve a intentarlo</Link>, y asegurate de escribirlo correctamente y sin espacios.</h6>      
      
       <br />
   
@@ -82,3 +85,4 @@ function OrderDetail() {
 }
 
 export default OrderDetail
+
