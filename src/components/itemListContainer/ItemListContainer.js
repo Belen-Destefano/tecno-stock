@@ -1,8 +1,7 @@
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import './ItemListContainer.css';
-import {cartContext} from '../../context/CartContext'
 import {useParams} from 'react-router-dom';
 
 //ACA IMPORTS DE FIREBASE
@@ -20,10 +19,10 @@ const ItemListContainer = ({greeting}) =>{
     
     const {categoryId} = useParams();   
 
-      const {getCart }=useContext(cartContext)
-        useEffect (()=> {    
-            getCart()                 
-        },[]);
+    // const {getCart }=useContext(cartContext)
+    // useEffect (()=> {    
+    //     getCart()                 
+    // },[]);
 
     
   

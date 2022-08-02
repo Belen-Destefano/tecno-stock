@@ -5,9 +5,11 @@ const {Provider} = cartContext;
 
 const CustomProvider = ({ children }) => {
 
-    const [products, setProducts] = useState ([]);    
+    
+    const [products, setProducts] = useState ([]);      
     const [quantityProduct, setQuantityProduct]= useState(0);
     const [addingPrice, setAddingPrice]= useState(0);
+    // const [productsStorage, setProductsStorage] = useState ([]);   
 
    
     useEffect(()=>{
@@ -17,28 +19,39 @@ const CustomProvider = ({ children }) => {
             products.forEach ((product) => (qty += product.qty));
             setQuantityProduct(qty);    
         };    
-        quantityCart();
+        quantityCart(); 
 
-        localStorage.setItem("PRODUCTOS", JSON.stringify(products))
     }, [products]);
 
-    const getCart = () => {      
-    
-        let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;
-        // console.log(carritoRecuperados );
-        
-        
-        if (carritoRecuperados.length) {
-            console.log(carritoRecuperados);
+    useEffect(()=>{
        
-            // setProducts ([]);
-            // setQuantityProduct(0);
-            for (let i = 0; i < carritoRecuperados.length; i++) {
-                let producto = carritoRecuperados[i];
-                setProducts([ producto]);                
+        const getCart = () => {      
+       
+            let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;
+   
+            // setProductsStorage(carritoRecuperados);  
+            // setProducts(productsStorage);  
+            // clear();
+            
+            if (carritoRecuperados) {
+          
+                
+               
+                for (let i = 0; i < carritoRecuperados.length; i++) {                
+                    let producto = carritoRecuperados[i];
+                    addProduct (producto)
+                    setProducts([...products,producto]);  
+                    console.log(products);
+
+                }
             }
-        } 
-    }
+     
+        }
+
+        getCart();    
+
+    }, []);
+
 
     const addProduct = (product) => {
     
@@ -49,13 +62,16 @@ const CustomProvider = ({ children }) => {
             
             copyProducts[index].qty += product.qty;
             setProducts(copyProducts);
+            
+          
 
         } else{
             setProducts([...products, product]);
+            
+          
         }       
-       
-       
-        
+        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
+            
     };
 
     //ACA LAS DOS FORMAS DE CALCULAR TOTAL.     
@@ -80,11 +96,12 @@ const CustomProvider = ({ children }) => {
     //     products.reduce ((acum, actual)=> acum + actual.price * actual.qty, 0)
     // }
 
-    
+
 
     const deleteProduct = (id) => {
         // slice puede Ser x q entrega otro array, no altera el Array, pero mejor filter invertido
         setProducts (products.filter(product => product.id !== id))
+        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
        
     }
 
@@ -101,12 +118,13 @@ const CustomProvider = ({ children }) => {
     const  clear = () => {
         setProducts ([]);
         setQuantityProduct(0);
+        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
     }
 
 
 
     return (
-        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear, getCart } }>
+        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear } }>
             {children}
         </Provider>
     )
