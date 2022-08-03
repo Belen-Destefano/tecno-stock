@@ -62,7 +62,7 @@ const ItemListContainer = ({greeting}) =>{
                 <img className="responsive-img imgBannerPagoTwo"  src="https://i.postimg.cc/P5bhv2d3/formasdepago-Dos.jpg" alt="Formas de pago" />
             </div>
 
-            { loading? <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="cargando" /> : <ItemList productList = {productList} />}                    
+            { loading?<div className='spinnerCenter'> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="cargando" /></div> : <ItemList productList = {productList} />}                    
         
 
         </>

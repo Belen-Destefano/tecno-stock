@@ -37,7 +37,7 @@ function ItemDetailContainer() {
   return (
     <>                   
 
-        { loading? <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="cargando" /> : <ItemDetail productDetail = {productDetail} />}                    
+        { loading? <div className='spinnerCenter'> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="cargando" /></div> : <ItemDetail productDetail = {productDetail} />}                    
 
     </>
   )
