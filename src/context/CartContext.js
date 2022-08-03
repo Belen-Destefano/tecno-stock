@@ -11,7 +11,7 @@ const CustomProvider = ({ children }) => {
     const [addingPrice, setAddingPrice]= useState(0);
     // const [productsStorage, setProductsStorage] = useState ([]);   
 
-   
+    
     useEffect(()=>{
         const quantityCart = () => {
             //   para esto foreach o reduce. 1ero ouso qty como const, desp lo cambio a let. antes de guardar esto en un useEffect, mando como value quantity cart. despues lo saco, q sea una funcion interna total paso el state quantityProduct
@@ -19,39 +19,31 @@ const CustomProvider = ({ children }) => {
             products.forEach ((product) => (qty += product.qty));
             setQuantityProduct(qty);    
         };    
-        quantityCart(); 
 
+        quantityCart();       
+       
     }, [products]);
 
-    useEffect(()=>{
+    const storageSet = () => {
+        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
+    }
+
        
-        const getCart = () => {      
-       
-            let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;
-   
-            // setProductsStorage(carritoRecuperados);  
-            // setProducts(productsStorage);  
-            // clear();
+    const storageGet = () => {      
+    
+        let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;
+        
+        if (carritoRecuperados) {        
             
-            if (carritoRecuperados) {
-          
-                
-               
-                for (let i = 0; i < carritoRecuperados.length; i++) {                
-                    let producto = carritoRecuperados[i];
-                    addProduct (producto)
-                    setProducts([...products,producto]);  
-                    console.log(products);
-
-                }
-            }
-     
+            setProducts(carritoRecuperados);
+           
         }
+    
+    }
 
-        getCart();    
+ 
 
-    }, []);
-
+   
 
     const addProduct = (product) => {
     
@@ -69,9 +61,7 @@ const CustomProvider = ({ children }) => {
             setProducts([...products, product]);
             
           
-        }       
-        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
-            
+        }        
     };
 
     //ACA LAS DOS FORMAS DE CALCULAR TOTAL.     
@@ -101,7 +91,7 @@ const CustomProvider = ({ children }) => {
     const deleteProduct = (id) => {
         // slice puede Ser x q entrega otro array, no altera el Array, pero mejor filter invertido
         setProducts (products.filter(product => product.id !== id))
-        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
+      
        
     }
 
@@ -118,13 +108,13 @@ const CustomProvider = ({ children }) => {
     const  clear = () => {
         setProducts ([]);
         setQuantityProduct(0);
-        localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
+         
     }
 
 
 
     return (
-        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear } }>
+        <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear, storageSet, storageGet } }>
             {children}
         </Provider>
     )

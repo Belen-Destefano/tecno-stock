@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {cartContext} from '../../context/CartContext'
 import './cart.css'
 import {Link} from "react-router-dom";
@@ -8,9 +8,26 @@ import FoundOrder from '../FoundOrder/FoundOrder'
 
 function Cart() {
  
-  const {products,deleteProduct, clear, addingPrice }=useContext(cartContext)
+  const {products,deleteProduct, clear, addingPrice, storageSet, storageGet }=useContext(cartContext)
 
   const totalPrice = addingPrice 
+
+  
+
+  useEffect(()=>{     
+    storageSet();   
+   
+    // eslint-disable-next-line react-hooks/exhaustive-deps     
+  }, [products]);
+
+    
+  useEffect (()=> {    
+    console.log("bla");
+      storageGet()   
+      // eslint-disable-next-line react-hooks/exhaustive-deps              
+  },[]);
+
+ 
 
  
   if (products.length) {

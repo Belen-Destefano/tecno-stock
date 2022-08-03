@@ -1,4 +1,4 @@
-import React, {useState, useContext } from 'react'
+import React, {useState, useContext,useEffect } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import './itemDetail.css'
 import {Link} from "react-router-dom";
@@ -9,19 +9,25 @@ import {cartContext} from '../../context/CartContext'
 
 function ItemDetail({productDetail}) {
 
-  const {category,price, img,stock, title, extendedName, extendedDescription, anotherDescription, anotherImage} = productDetail    
+  const { category,price, img,stock, title, extendedName, extendedDescription, anotherDescription, anotherImage} = productDetail    
 
   const [changeBoton, setChangeBoton]= useState(true)
 
-  const {addProduct}=useContext(cartContext)  
 
+  const {addProduct, products,storageSet}=useContext(cartContext)  
+
+
+  useEffect(()=>{ 
+    
+    storageSet();
+   
+  }, [products]);
 
   function onAdd(quantity) {      
 
     const product = {...productDetail, qty: quantity } 
     addProduct(product)    
-    setChangeBoton(false)
-   
+    setChangeBoton(false)       
   } 
 
 

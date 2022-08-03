@@ -1,8 +1,9 @@
 
-import React, {  useEffect, useState } from 'react';
+import React, {  useContext, useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import './ItemListContainer.css';
 import {useParams} from 'react-router-dom';
+import {cartContext} from '../../context/CartContext'
 
 //ACA IMPORTS DE FIREBASE
 import {db} from "../../firebase/firebase";
@@ -18,11 +19,14 @@ const ItemListContainer = ({greeting}) =>{
     const [loading, setLoading]= useState (true)
     
     const {categoryId} = useParams();   
+ 
+    const {storageGet }=useContext(cartContext)
 
-    // const {getCart }=useContext(cartContext)
-    // useEffect (()=> {    
-    //     getCart()                 
-    // },[]);
+    
+    useEffect (()=> {    
+        storageGet()   
+        // eslint-disable-next-line react-hooks/exhaustive-deps              
+    },[]);
 
     
   

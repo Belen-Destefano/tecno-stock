@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext,useEffect, useState } from 'react'
 import ItemDetail from '../itemDetail/ItemDetail'
 
 import {useParams} from 'react-router-dom';
 
 import {db} from '../../firebase/firebase';
 import {getDoc, doc, collection} from 'firebase/firestore'
+import {cartContext} from '../../context/CartContext'
 
 function ItemDetailContainer() {
 
@@ -12,6 +13,14 @@ function ItemDetailContainer() {
     const [loading, setLoading]= useState (true)
 
     const {productId}= useParams();
+
+    const {storageGet }=useContext(cartContext)
+
+    
+    useEffect (()=> {    
+        storageGet()   
+        // eslint-disable-next-line react-hooks/exhaustive-deps              
+    },[]);
 
     useEffect (()=> {
 
