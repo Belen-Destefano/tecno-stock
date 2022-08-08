@@ -8,24 +8,44 @@ const CustomProvider = ({ children }) => {
     const [products, setProducts] = useState ([]);    
     const [quantityProduct, setQuantityProduct]= useState(0);
     const [addingPrice, setAddingPrice]= useState(0);
+    const [productsStorage, setProductsStorage] = useState (false);   
 
    
     useEffect(()=>{
-        const quantityCart = () => {         
+        const quantityCart = () => {
+          
             let qty = 0;
             products.forEach ((product) => (qty += product.qty));
             setQuantityProduct(qty);    
         };    
-        quantityCart();
+        quantityCart();       
 
         const priceFunction = ()=> {
             let total= 0;    
-            products.forEach((product) => { total += (product.price * product.qty)});
+            products.forEach(product => { total += (product.price * product.qty)});
             setAddingPrice (total)
         };
         priceFunction()
+        
+        const storageSet = () => {
+            localStorage.setItem("PRODUCTOS", JSON.stringify(products))   
+        }
+        if(productsStorage){
+            storageSet()         
+        }
+       
+    }, [products, productsStorage]);
 
-    }, [products]);
+    useEffect(()=>{
+        const storageGet = () => {         
+            let carritoRecuperados = JSON.parse(localStorage.getItem("PRODUCTOS")) ;           
+            
+            if (carritoRecuperados) {                     
+                setProducts(carritoRecuperados);           
+            }            
+        }
+        storageGet()      
+    }, []);
 
     const addProduct = (product) => {
     
@@ -39,11 +59,13 @@ const CustomProvider = ({ children }) => {
 
         } else{
             setProducts([...products, product]);
-        }       
+        }      
+        setProductsStorage (true);  
     };
        
     const deleteProduct = (id) => {       
-        setProducts (products.filter(product => product.id !== id))       
+        setProducts (products.filter(product => product.id !== id))     
+        setProductsStorage (true);   
     }
 
     const isInCart = (id) => {      
@@ -53,6 +75,7 @@ const CustomProvider = ({ children }) => {
     const  clear = () => {
         setProducts ([]);
         setQuantityProduct(0);
+        setProductsStorage (true); 
     }
 
     return (
