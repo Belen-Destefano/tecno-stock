@@ -5,14 +5,12 @@ const useItemCount = (stock, initial) => {
   const [quantity, setQuantity] = useState(initial)
 
   const count = (value) => {
-    // guardo en una const asi la uso en el if en vez de usar quantity, xq sino cuando llega a stock no puedo bajarlo
+    
     const result = quantity + value;
     if(result <= stock & result >= initial){
-      setQuantity(quantity+value)
-        
+      setQuantity(quantity+value)        
     }
   }
-
 
   return {
     count, quantity

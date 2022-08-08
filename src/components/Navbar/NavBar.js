@@ -13,7 +13,6 @@ import { getDocs, collection } from 'firebase/firestore';
 import {Link, NavLink} from "react-router-dom";
 
 
-
 const NavBar = () =>{
     
     const [categories, setCategories]= useState([])

@@ -5,7 +5,6 @@ import {cartContext} from '../../context/CartContext'
 const CartWidget = () => {
 
     const {quantityProduct, products} = useContext(cartContext);
-
    
     return (
         <div className='containerCarrito'>
@@ -13,7 +12,6 @@ const CartWidget = () => {
             { products.length > 0 &&  <span className="contadorCarrito">{quantityProduct}</span> }
            
         </div>     
-
     )        
     
 }

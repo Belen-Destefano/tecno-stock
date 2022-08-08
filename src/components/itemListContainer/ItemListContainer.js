@@ -2,13 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import './ItemListContainer.css';
-// import {getData} from '../../mocks/fakeApi';
 import {useParams} from 'react-router-dom';
 
-//ACA IMPORTS DE FIREBASE
 import {db} from "../../firebase/firebase";
 import { getDocs, collection, query, where } from 'firebase/firestore';
-
 
 
 const ItemListContainer = ({greeting}) =>{ 
@@ -16,8 +13,7 @@ const ItemListContainer = ({greeting}) =>{
     const [productList, setProductList]= useState([])
     const [loading, setLoading]= useState (true)
 
-    const {categoryId} = useParams();
-   
+    const {categoryId} = useParams();   
  
 
     useEffect (()=> {

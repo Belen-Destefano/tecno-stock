@@ -1,10 +1,8 @@
 
 
-.btnBuy{
-    /* width: 100%; */
+.btnBuy{    
     width: 90%;    
-    margin: 4% 5%;
-    
+    margin: 4% 5%;    
 }
 
 .btnDetail {
@@ -12,26 +10,15 @@
     color: #2c7499;
 }
 
-/* .formContainer{
-    
-    width: 92%;
-    margin: auto;
-    border: solid 1px #a89393;
-    padding: 16px;
-} */
-
-.formContainer{
-    
+.formContainer{    
     width: 100%;
     background-color: #f0f0f0;
     margin: auto;
     padding: 16px;
-    box-shadow: 3px 4px 9px #37474f78;
-   
+    box-shadow: 3px 4px 9px #37474f78;   
 }
 
-.finishContainer{
-    
+.finishContainer{    
     width: 100%;
     background-color: #f0f0f0;
     margin: auto;
@@ -43,22 +30,7 @@
 }
 
 
-
-/* .finishContainer{
-    
-    width: 92%;
-    margin: auto;
-    border: solid 1px #a89393;
-    padding: 16px;
-    height: 213px;
-    flex-direction: column;
-    justify-content: center;
-} */
-
-
-
-input{
-    /* border: solid #a89393 1px !important; */
+input{  
     height: 2rem !important;
 }
 

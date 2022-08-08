@@ -1,5 +1,3 @@
-// recibe un producto por props y muestra sus caracteristicas
-
 import React from 'react'
 import './item.css';
 import { Link } from 'react-router-dom';
@@ -9,9 +7,7 @@ const item = ({product}) => {
 
     const {name, price, description, img}= product
 
-
   return (
-    
         <div className='itemContainer'>       
             
             <div className='img-Container'> 
@@ -26,13 +22,10 @@ const item = ({product}) => {
                 <img className='star' src="https://i.postimg.cc/QCpgX1Nm/estrellas.jpg" alt="" />
                 <p className='textHeight'>{description}</p>
                  <Link to={`/tecno-stock/producto/${product.id}`} className='waves-effect waves-light btn   grey darken-4 btnVerMas' >Ver detalles</Link>
-            </div>
-         
+            </div>       
 
-
-        </div>    
-    
-  )
+        </div>        
+    )
 }
 
 export default item

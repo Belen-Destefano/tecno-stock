@@ -11,13 +11,20 @@ const CustomProvider = ({ children }) => {
 
    
     useEffect(()=>{
-        const quantityCart = () => {
-            //   para esto foreach o reduce. 1ero ouso qty como const, desp lo cambio a let. antes de guardar esto en un useEffect, mando como value quantity cart. despues lo saco, q sea una funcion interna total paso el state quantityProduct
+        const quantityCart = () => {         
             let qty = 0;
             products.forEach ((product) => (qty += product.qty));
             setQuantityProduct(qty);    
         };    
         quantityCart();
+
+        const priceFunction = ()=> {
+            let total= 0;    
+            products.forEach((product) => { total += (product.price * product.qty)});
+            setAddingPrice (total)
+        };
+        priceFunction()
+
     }, [products]);
 
     const addProduct = (product) => {
@@ -34,53 +41,19 @@ const CustomProvider = ({ children }) => {
             setProducts([...products, product]);
         }       
     };
-
-    //ACA LAS DOS FORMAS DE CALCULAR TOTAL.     
-
-    useEffect(()=>{
-        const priceFunction = ()=> {
-            let total= 0;    
-            products.forEach(product => { total += (product.price * product.qty)});
-            setAddingPrice (total)
-        };
-        priceFunction()
-              
-    }, [products]);
-
-    // const addingPrice = ()=> {
-    //     let total= 0;    
-    //     products.forEach(product => { total += (product.price * product.qty)});
-    //     return total
-    // }
-
-    // const total = () => {
-    //     products.reduce ((acum, actual)=> acum + actual.price * actual.qty, 0)
-    // }
-
-    
-
-    const deleteProduct = (id) => {
-        // slice puede Ser x q entrega otro array, no altera el Array, pero mejor filter invertido
-        setProducts (products.filter(product => product.id !== id))
        
+    const deleteProduct = (id) => {       
+        setProducts (products.filter(product => product.id !== id))       
     }
 
-    // por buena practica/convencion, si la funcion empieza con is tiene q devolver un booleano
-    const isInCart = (id) => {
-        // Find asi por que no devuelve booleano. haces que devuelva booleano. en cambio some devuelve booleano
-        // const found = products.find (product => product.id === id)
-        // return found? true : false;
-
+    const isInCart = (id) => {      
         return products.some (products => products.id === id)
-    }
-      
+    }         
 
-    const  clear = (product) => {
+    const  clear = () => {
         setProducts ([]);
         setQuantityProduct(0);
     }
-
-
 
     return (
         <Provider value={{products,addProduct,addingPrice, deleteProduct, quantityProduct, clear } }>

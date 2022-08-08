@@ -9,9 +9,7 @@ import FoundOrder from '../FoundOrder/FoundOrder'
 function Cart() {
 
   const {products,deleteProduct, clear, addingPrice }=useContext(cartContext)
-
   const totalPrice = addingPrice
-
  
   if (products.length) {
 
@@ -24,7 +22,6 @@ function Cart() {
           <FoundOrder/>
 
           <h2 className='center-align'>Carrito</h2>
-
             
           {
             products.map((product)=> {
@@ -38,9 +35,8 @@ function Cart() {
                   <p>Precio: {product.price}</p>
                 </div>
                 
-                <i  onClick={()=> deleteProduct(product.id)} className="material-icons Small deleteBtn">clear</i>   
-               
-                
+                <i  onClick={()=> deleteProduct(product.id)} className="material-icons Small deleteBtn">clear</i> 
+                               
               </section> 
             }) 
           }   
