@@ -43,7 +43,7 @@ const ItemListContainer = ({greeting}) =>{
         
         
         return (
-            <>           
+        <>           
             <div className='greetingBackground'>
                 <div className='greetingContainer'>
                     <h2 className='greetingTwo'>DISEÑO. INNOVACIÓN.</h2>

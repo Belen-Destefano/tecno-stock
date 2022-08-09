@@ -44,7 +44,7 @@ function Footer() {
 
           <div className="left-align col l6 s12">
             <h5 className="left-align white-text">  <Link to="/" className="brand-logo"><img src={logo} alt="Tecno-Stock" /></Link>          </h5>
-            {/* <p class="grey-text text-lighten-4"> © 2014 Copyright Tecno-Stock.</p> */}
+           
           </div>
 
           <div className="col l4 offset-l2 s12">
