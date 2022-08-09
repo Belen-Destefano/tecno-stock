@@ -7,7 +7,10 @@ const useItemCount = (stock, initial) => {
   const count = (value) => {
     
     const result = quantity + value;
-    if(result <= stock & result >= initial){
+    // if(result <= stock & result >= initial){
+    //   setQuantity(quantity+value)        
+    // }
+    if(result >= initial){
       setQuantity(quantity+value)        
     }
   }

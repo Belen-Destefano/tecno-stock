@@ -7,7 +7,7 @@ import React, {useContext, useState} from 'react'
 import {cartContext} from '../../context/CartContext'
 
 import {db} from '../../firebase/firebase'
-import {collection, addDoc, serverTimestamp} from 'firebase/firestore'
+import {collection, addDoc, serverTimestamp, updateDoc, doc} from 'firebase/firestore'
 
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -19,14 +19,28 @@ function Buy() {
     
     const [changeComponentForm, setChangeComponentForm]= useState(false);
     const [changeOrderNum, setChangeOrderNum]= useState(false);
+
     
-    const {products, addingPrice, clear} = useContext(cartContext);
+    const {products, addingPrice, clear, deleteProduct} = useContext(cartContext);
     const [idBuy, setIdBuy]= useState("")
     const [userInfo, setUserInfo]= useState({});
     
     const submitForm = (e) => {                
       
         e.preventDefault();     
+
+        products.forEach(element => {
+           if (element.qty > element.stock){         
+                const notify = () => {      
+                    toast.warn("Lo siento. Quitamos el " + element.name +  " del carrito. Seleccionaste mas unidades de las que contamos. Por el momento tenemos " + element.stock + " unidad/es del producto", { autoClose: false 
+                });}
+
+                notify()                     
+                deleteProduct(element.id)       
+            }
+        })
+
+        
         if (e.target.parentElement[0].value !== "" && e.target.parentElement[1].value !== ""){
            setUserInfo({ mail: e.target.parentElement[0].value, name: e.target.parentElement[1].value});             
       
@@ -55,11 +69,9 @@ function Buy() {
             quantity: product.qty,        
         }
     }) 
-    
-  
-    const buyEnd = () => {
-        
 
+    const buyEnd = () => {        
+      
         const buyCollection = collection (db, 'ventas');
         addDoc (buyCollection, {
             userInfo,
@@ -68,13 +80,19 @@ function Buy() {
             totalPrice : addingPrice,
         })
         .then ((result)=>{
-            setIdBuy (result.id);              
+            setIdBuy (result.id);     
+            
+            products.forEach(element => {               
+                const upDateCollection = doc (db, 'productos', element.id)
+                updateDoc(upDateCollection, {stock: element.stock - element.qty})
+            })
 
         })
-        setChangeOrderNum(true);
-        
+        setChangeOrderNum(true);     
         
     }
+      
+    
 
     function clearCart() {
         clear()
