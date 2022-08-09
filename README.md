@@ -4,7 +4,7 @@
 **App creada para la venta de productos de electrónica de consumo, audio y cámaras profesionales.**
 
 ## Funcionamiento del proyecto
-![tecnoStock](./public/Y PONGO ACA RUTA DONDE PONGA GIF)
+![tecnoStock](./public/funcionamiento.gif)
  
 ## Contenido
 Este proyecto esta compuesto por:
