@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tecno-stock/static/css/main.2b70021a.css",
+    "main.css": "/tecno-stock/static/css/main.4aa3d1c7.css",
     "main.js": "/tecno-stock/static/js/main.a959aec7.js",
     "static/js/787.b61b1d33.chunk.js": "/tecno-stock/static/js/787.b61b1d33.chunk.js",
     "static/media/logo.jpg": "/tecno-stock/static/media/logo.009a6ded72082e9758c7.jpg",
     "index.html": "/tecno-stock/index.html",
-    "main.2b70021a.css.map": "/tecno-stock/static/css/main.2b70021a.css.map",
+    "main.4aa3d1c7.css.map": "/tecno-stock/static/css/main.4aa3d1c7.css.map",
     "main.a959aec7.js.map": "/tecno-stock/static/js/main.a959aec7.js.map",
     "787.b61b1d33.chunk.js.map": "/tecno-stock/static/js/787.b61b1d33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b70021a.css",
+    "static/css/main.4aa3d1c7.css",
     "static/js/main.a959aec7.js"
   ]
 }
